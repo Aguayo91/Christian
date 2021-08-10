@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing_nav">1dp</dimen>
+    <dimen name="check_marginStart">20dp</dimen>
+    <dimen name="check_paddingStart">10dp</dimen>
+    <dimen name="check_paddingEnd">10dp</dimen>
+    <dimen name="texview_toolbar_size">18sp</dimen>
+    <dimen name="activity_margin_vertical">16dp</dimen>
+    <dimen name="activity_margin_horizontal">16dp</dimen>
+    <dimen name="button_blue_marginStart">20dp</dimen>
+    <dimen name="btn_continue_marginStart">30dp</dimen>
+    <dimen name="btn_continue_marginEnd">30dp</dimen>
+    <dimen name="button_blue_marginEnd">20dp</dimen>
+    <dimen name="button_blue_paddindStart">20dp</dimen>
+    <dimen name="button_blue_paddindEnd">20dp</dimen>
+    <dimen name="button_white_btn_loteo_paddindEnd">20dp</dimen>
+    <dimen name="button_white_btn_confirmacion_paddindEnd">5dp</dimen>
+    <dimen name="button_blue_textSize">15sp</dimen>
+    <dimen name="button_white_textSize">15sp</dimen>
+    <dimen name="ancho_medio">16dp</dimen>
+    <dimen name="medio">4dp</dimen>
+    <dimen name="editext_layout_height">45dp</dimen>
+    <dimen name="editext_layout_marginTop">10dp</dimen>
+    <dimen name="editext_paddingStart">20dp</dimen>
+    <dimen name="editext_paddingEnd">20dp</dimen>
+    <dimen name="editext_textSize">14sp</dimen>
+    <dimen name="radio_layout_height">40dp</dimen>
+    <dimen name="radio_marginTop">5dp</dimen>
+</resources>

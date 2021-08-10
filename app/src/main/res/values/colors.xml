@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_200">#006EB9</color>
+    <color name="blue_500">#006EB9</color>
+    <color name="blue_700">#285BA7</color>
+    <color name="blue_900">#0266AE</color>
+    <color name="blue_300">#0461A1</color>
+    <color name="blue_alfa">#0461A1</color>
+    <color name="colorAzulDark">#006EB9</color>
+    <color name="colorAzulDarker">#005baa</color>
+    <color name="colorAzulHint">#82C9FA</color>
+    <color name="colorAzulPrimary">#00ADEE</color>
+    <color name="colorAzulSombreado">#CCE2ECF7</color>
+    <color name="yellow_700">#FEDD2D</color>
+    <color name="yellow_text">#FFCF36</color>
+    <color name="yellow_Coppel">#FDDD2E</color>
+    <color name="colorAmarillo">#FEDD2D</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#006EB9</color>
+    <color name="colorGris">#DDDDDD</color>
+    <color name="gray">#C9CCCF</color>
+    <color name="md_grey_300">#C9CCCF</color>
+    <color name="colorGrisHintTexto">#80536473</color>
+    <color name="gray_text">#536473</color>
+    <color name="fonts">#536473</color>
+    <color name="colorGrisTexto">#536473</color>
+    <color name="grey600">#757575</color>
+    <color name="black">#FF000000</color>
+    <color name="background_dark">#ff000000</color>
+    <color name="trans">#80000000 </color>
+    <color name="colorBlack">#000000</color>
+    <color name="materialDividerColor">#1f000000</color>
+    <color name="md_red_900">#B71C1C</color>
+    <color name="red">#F6646B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorVerde">#87C544</color>
+    <color name="colorBackground">#F7F7F7</color>
+    <color name="gray_background">#F7F7F7</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorBlanco">#FFFFFE</color>
+    <color name="dividerColor">#F0F0F0</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

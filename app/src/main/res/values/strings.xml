@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Recepción Surtido Muebles</string>
+    <string name="domain">com.coppel</string>
+    <string name="globaldomain">coppel</string>
+    <string name="application_inicio">Inicio de la Aplicación Recepción de Surtido APK1</string>
+    <string name="logotipo_de_coppel">logo de coppel.com</string>
+    <string name="menu_home">Recepción de Surtido</string>
+    <string name="content_description_warnin">icono_warning</string>
+    <string name="content_description_logo">logo de coppel.com</string>
+    <string name="content_description_back">flecha atrás</string>
+    <string name="content_description_chevron">flecha derecha</string>
+    <string name="content_description_raya">raya al piso</string>
+    <string name="title_uploading">El dispositivo se está\n actualizando</string>
+    <string name="loading">Loading…</string>
+    <string name="errorWs_reStartFun">Error… reintento automático</string>
+    <string name="TransporCelular">"NetworkCapabilities.TRANSPORT_CELLULAR"</string>
+    <string name="TransporWIFI">"NetworkCapabilities.TRANSPORT_WIFI"</string>
+    <string name="TransporEthernet">"NetworkCapabilities.TRANSPORT_ETHERNET"</string>
+    <string name="device"><![CDATA["Dispositivo AndroidPDA es siempre 1 = :-------> %1$d ]]></string>
+    <string name="option"><![CDATA["Opción AndroidPDA es siempre 1 = :----> %1$d ]]></string>
+    <string name="get_parciales"><![CDATA["Guardar número de parciales = :---------> %1$d ]]></string>
+    <string name="getFoliodeSurtido"><![CDATA[Obtener Número de foliodelSurtido:------------------> %1$s ]]></string>
+    <string name="getTiendaCoppel"><![CDATA[Obtener Número de Tienda:------------------> %1$s]]></string>
+    <string name="getTipoSeleccionado"><![CDATA[Obtener Número de tipoSeleccionado:------------------> %1$d ]]></string>
+    <string name="getNumberEmpleado"><![CDATA[Obtener Número de Empleado:------------------> %1$s]]></string>
+    <string name="getNumberChofer"><![CDATA[Obtener Número de Chofer:------------------> %1$s]]></string>
+    <string name="getmacpda"><![CDATA[Obtener Número de ID Hardware Android:------------------> %1$s ]]></string>
+    <string name="getIPWS"><![CDATA[Obtener Número IPWS:------------------> %1$s]]></string>
+    <string name="getPuerto"><![CDATA[Obtener Número de puerto 8080:------------------> %1$s]]></string>
+    <string name="error_IO_Actualizar"><![CDATA[No se logró obtener datos de ActualizarRecepciónSurtidoPDA---> ]]></string>
+    <string name="icono_warning">icono de advertencia</string>
+    <string name="icono_coppel">icono logo llave  Coppel</string>
+    <string name="icono_flecha_aceptar">icono flecha blanca</string>
+    <string name="title_APK1">Error de Aplicación</string>
+    <string name="message_APK1">Favor de Iniciar la Aplicación de Recepción de Surtido</string>
+
+    <string name="title_sharedpreferences">Error de Aplicación</string>
+    <string name="message_sharedpreferences">No se obtuvieron los valores iniciales</string>
+
+    <string name="btn_aceptar_dialog">Aceptar</string>
+    <string name="btn_yes">Sí</string>
+    <string name="btn_no">No</string>
+    <string name="title_error_assortment_folio">Folio</string>
+    <string name="startActivity_APK2"><![CDATA[--------------startActivity App2 Confirmación Surtido Muebles------------------> ]]></string>
+    <string name="startActivity_APK1"><![CDATA[--------------startActivity App1 Preconfirmación de Surtido Muebles------------------> ]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_salir">Salir</string>
+    <string name="menu_jaba">Jaba sin etiqueta</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_master_pendientes">Master Pendientes</string>
+    <string name="apkFolio">Folio de surtido:</string>
+    <string name="progress_home">%1$d%% de avance</string>
+    <string name="tiempo_recepcion">Tiempo de recepción</string>
+    <string name="to_end">Finalizar</string>
+    <string name="btn_grabar_jabasinetiqueta">Grabar</string>
+    <string name="btn_grabar">Grabar</string>
+    <string name="alert_grabar">Grabando…</string>
+    <string name="btn_salir_jabasinetiqueta">Salir</string>
+    <string name="title_ediText">Código / Vale / Master</string>
+    <string name="title_jaba_sinetiqueta">SKU</string>
+    <string name="input_digitos">"CMS 1234567890"</string>
+    <string name="hint">Ingrese el código, vale o master</string>
+    <string name="hint_loteo">Ingrese el código o vale</string>
+    <string name="hint_cantidad">1</string>
+    <string name="master">Master: %1$s%1$d %1$d</string>
+    <string name="btn_capturar">Capturar</string>
+    <string name="titulo_master_leida">Etiqueta Master</string>
+    <string name="master_leida">Esta master ya fue leída</string>
+    <string name="titulo_ventasxr">Artículo para entrega a clientes</string>
+    <string name="titulo_finalizar">Terminar Surtido</string>
+    <string name="msg_finalizar">¿Desea finalizar la preconfirmación con mercancia faltante?</string>
+    <string name="marcanciaLista">Mercancia capturada</string>
+    <string name="marcanciapendiente">Mercancia pendiente</string>
+    <string name="size_surtido">"EL total es : %1$d</string>
+    <string name="finalizado">00:00:00</string>
+    <string name="tiempo_pausado">Tiempo en Pausa %1$d</string>
+    <string name="tiempo_cancelado">Tiempo Cancelado %1$d</string>
+    <string name="progress">%1$d%%</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="hint_codigo">Código</string>
+    <string name="hint_parcial">Parcial</string>
+    <string name="sobrantes">S</string>
+    <string name="exhibir">E</string>
+    <string name="tx_irregular">Irregularidad</string>
+
+
+</resources>
