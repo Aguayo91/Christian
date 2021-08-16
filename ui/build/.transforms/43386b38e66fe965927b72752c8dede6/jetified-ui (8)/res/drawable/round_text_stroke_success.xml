@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 18/07/19 05:05 PM
+  ~ Description:  Round EditText Primary Stroke Success
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+<solid android:color="@color/colorBlanco"/>
+
+<stroke android:width="@dimen/stroke_size"
+    android:color="@color/colorVerde"
+    />
+
+<gradient
+    android:startColor="@color/colorBlanco"
+    android:centerColor="@color/colorBlanco"
+    android:endColor="@color/colorBlanco"
+    ></gradient>
+
+
+    <padding android:left="@dimen/control_padding"
+        android:top="2dp"
+        android:right="@dimen/control_padding"
+        android:bottom="2dp"/>
+
+    <corners android:radius="@dimen/corner_radius" />
+</shape>

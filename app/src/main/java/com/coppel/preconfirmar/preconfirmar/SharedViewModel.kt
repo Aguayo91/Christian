@@ -1,15 +1,162 @@
 package com.coppel.preconfirmar.preconfirmar
 
+import android.app.Dialog
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import android.view.Window
+import android.widget.Button
+import android.widget.TextView
+import androidx.lifecycle.*
 import com.coppel.preconfirmar.R
 import com.coppel.preconfirmar.application.RxApplication
+import com.coppel.preconfirmar.entities.Todo
+import kotlinx.coroutines.launch
 
-class SharedViewModel: ViewModel() {
+class SharedViewModel(
+    private val repositorio: HomeRepositorio
+): ViewModel() {
+
+    val savemuebles = MutableLiveData<String>()
+    var totalesPorFolio: MutableLiveData<List<Int>>
+    var finalizarsurtido:MutableLiveData<Boolean>
+
+    private var normal: MutableLiveData<Todo>
+    private var etiquetaleida: MutableLiveData<Todo>
+    private lateinit var capturados: LiveData<List<Todo>>
+    private var showRubros : MutableLiveData<Boolean>
+
+    private var startIrregularidadMuebles: MutableLiveData<Todo>
+    private var startIrregularidadCedis: MutableLiveData<Todo>
+    private var startIrregularidadJaba: MutableLiveData<Todo>
+    private var startIrregularidadRopa: MutableLiveData<Todo>
+
+
+    init {
+        finalizarsurtido = MutableLiveData<Boolean>()
+        totalesPorFolio = MutableLiveData()
+        normal = MutableLiveData<Todo>()
+        showRubros = MutableLiveData<Boolean>()
+        etiquetaleida = MutableLiveData<Todo>()
+
+        startIrregularidadMuebles = MutableLiveData<Todo>()
+        startIrregularidadCedis = MutableLiveData<Todo>()
+        startIrregularidadJaba = MutableLiveData<Todo>()
+        startIrregularidadRopa = MutableLiveData<Todo>()
+    }
+
+    fun getStartActivityIrregularidadMuebles() = startIrregularidadMuebles
+
+    fun getNormal() = normal
+    fun getEtiquetaLeida()= etiquetaleida
+    fun getSHowRubros() = showRubros
+
+
+    fun saveTodo(todo : Todo){
+        viewModelScope.launch {
+            repositorio.saveTodo(todo)
+
+        }
+    }
+
+    fun actualizaSurtidos() {
+        viewModelScope.launch {
+            repositorio.actualizaSurtidos()
+            repositorio.obtenerLoteo()
+            finalizarsurtido.postValue(true)
+
+            Log.i("RESPUESTA_SERVICE","Se termino con exito ")
+
+        }
+
+    }
+
+
+    fun obtenerCapturado(): LiveData<List<Todo>> {
+        capturados = repositorio.obtenerCapturado()
+        return capturados
+    }
+
+    fun onClickedIrregularidad(position : Int, isChecked : Boolean, context : Context) {
+
+        var todo : Todo? = capturados.value?.get(position)
+
+        if(todo != null){
+
+            todo.irregularidad = isChecked
+            viewModelScope.launch{
+                repositorio.actualizaIrregularidad(todo)
+                if(isChecked){
+                    when(todo.tipo){
+                        1-> //IrregularidadActivity
+                            startIrregularidadMuebles.postValue(todo)
+                        3-> //IrregularidadCedisActivity
+                            startIrregularidadCedis.postValue(todo)
+                        8-> //IrregualridadRopaActivity
+                            startIrregularidadRopa.postValue(todo)
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    fun buscaCodigosMaster(codigo : String){
+        viewModelScope.launch {
+            //Metodo del repos
+            val todo : Todo? = repositorio.buscasMaster(codigo)
+
+            if(todo?.description=="leido"){
+                etiquetaleida.postValue(todo)
+            }
+            else if (todo?.isMaster==1){
+                normal.postValue(todo)
+            }
+
+
+        }
+    }
+
+     fun buscasMasterCodigos(smaster:String){
+         viewModelScope.launch {
+             //Metodo del repos
+             val todo : Todo? = repositorio.buscarsMasterCodigo(smaster)
+
+             if(todo?.description=="leido"){
+                 etiquetaleida.postValue(todo)
+             }
+             else if (todo?.isMaster==1){
+                 normal.postValue(todo)
+             }
+
+
+         }
+     }
+
+
+    fun obtenerdescripcion(s: String) {
+        savemuebles.postValue(s)
+    }
+
+    fun obtieneDetalleLoteo(){
+        viewModelScope.launch {
+            repositorio.obtenerLoteo()
+        }
+    }
+
+    fun obtenerfaltantes() = repositorio.obtenerFaltantes()
+
+    fun obtenerTotales(folio : Int)  {
+        viewModelScope.launch {
+            val total = repositorio.obtenerTotales(folio)
+            val sobrantes = repositorio.obtenerSobrante()
+
+            totalesPorFolio.postValue(arrayListOf(total,sobrantes))
+
+        }
+    }
 
 
     fun redInternetOnline(context: Context): Boolean {
@@ -43,6 +190,27 @@ class SharedViewModel: ViewModel() {
         return true
         //false NormalApp
     }
+    fun alertainformativa(
+        context: Context,
+        titlewarning: String,
+        messagewarning: String
+    ) {
+        Log.d("SharedViewModel", "ADVERTENCIA INFORMATIVA UI --->SharedViewModel")
+        val recepcionAlert = Dialog(context)
+        recepcionAlert.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        recepcionAlert.setCancelable(false)
+        recepcionAlert.setContentView(R.layout.alert_dialog)
+        recepcionAlert.window!!.setWindowAnimations(R.style.DialogAnimation)
+        val body = recepcionAlert.findViewById(R.id.title_warning) as TextView
+        val message = recepcionAlert.findViewById(R.id.message_warning) as TextView
+        val btntoAccept = recepcionAlert.findViewById(R.id.btn_to_accept) as Button
+        btntoAccept.setText(R.string.btn_aceptar_dialog)
+        body.text = titlewarning
+        message.text = messagewarning
+        btntoAccept.setOnClickListener {recepcionAlert.dismiss()}
+        recepcionAlert.show()
+    }
+
 
 }
 

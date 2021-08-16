@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:scanner:unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/scanner/build/.transforms/1a67524e94767c3cd564859216c5e205/jetified-scanner/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/scanner/build/.transforms/1a67524e94767c3cd564859216c5e205/jetified-scanner/res" />
+      <root url="file://$PROJECT_DIR$/scanner/build/.transforms/1a67524e94767c3cd564859216c5e205/jetified-scanner/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,14 @@
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 20/08/19 10:53 AM
+  ~ Description:
+  -->
+
+<vector android:height="24dp" android:tint="#006EB9"
+    android:viewportHeight="24.0" android:viewportWidth="24.0"
+    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#FF000000" android:pathData="M16.59,8.59L12,13.17 7.41,8.59 6,10l6,6 6,-6z"/>
+</vector>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="dar_permisos">Dar permisos</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
+    <string name="ip_file_resolver_not_found">El archivo %1$s con las URLs no se encontró en la memoria externa del dispositivo</string>
+    <string name="loading">Cargando…</string>
+    <string name="message_internet_connection">Sin conexión a internet</string>
+    <string name="message_server_error">Ha ocurrido un problema en el servidor, por favor inténtelo más tarde</string>
+    <string name="permisos">Permisos</string>
+    <string name="permisos_messages">Para que la aplicación pueda acceder a internet, es necesario que le de permisos para acceder a la memoria externa del dispositivo.</string>
+    <string name="save">Guardar</string>
+    <string name="search">Buscar</string>
+    <string name="wait_moment">Por favor, espere un momento</string>
+</resources>

@@ -73,9 +73,12 @@ class RecibirRepositoryImpl(
         return  dataSourceRemote.getConsultarKeyX()
     }
 
-
-    override suspend fun getConsultarFaltantes(): ConsultarFaltantes =
-        dataSourceRemote.getConsultarFaltantes()
+    override suspend fun getConsultarFaltantes(): ConsultarFaltantes {
+        dataSourceRemote.getConsultarFaltantes().data.forEach { faltantesList ->
+            dataSourceLocal.saveConsultarFaltantes(faltantesList.toFaltantesListEntity())
+        }
+        return dataSourceRemote.getConsultarFaltantes()
+    }
 
     override suspend fun getConsultarMasterCompensadas(): ConsultarMasterCompensadas =
         dataSourceRemote.getConsultarMasterCompensadas()

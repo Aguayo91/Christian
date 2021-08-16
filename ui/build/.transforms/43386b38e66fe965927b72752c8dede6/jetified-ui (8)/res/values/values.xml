@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="default_Items">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+    </string-array>
+    <attr format="reference" name="toolbarTheme"/>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorAmarillo">#FEDD2D</color>
+    <color name="colorAzulBtnRipple">#80006EB9</color>
+    <color name="colorAzulDark">#006EB9</color>
+    <color name="colorAzulDarker">#0461A1</color>
+    <color name="colorAzulPrimary">#00ADEE</color>
+    <color name="colorAzulStroke">#0083D5</color>
+    <color name="colorBackground">#F7F7F7</color>
+    <color name="colorBlanco">#FFFFFF</color>
+    <color name="colorGris">#DDDDDD</color>
+    <color name="colorGrisDisabled">#BBBBBB</color>
+    <color name="colorGrisHintTexto">#80536473</color>
+    <color name="colorGrisSombreado">#CCE2ECF7</color>
+    <color name="colorGrisTexto">#536473</color>
+    <color name="colorInvalid">#F6646B</color>
+    <color name="colorMostaza">#FFCF36</color>
+    <color name="colorTextDisabled">#BBBBBB</color>
+    <color name="colorVerde">#87C544</color>
+    <color name="colorWarning">#F0AD4E</color>
+    <color name="transparent">#00000000</color>
+    <dimen name="activity_margin">8dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_text_size">18sp</dimen>
+    <dimen name="control_padding">8dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="edittext_height">48dp</dimen>
+    <dimen name="edittext_multiline_height">150dp</dimen>
+    <dimen name="edittext_text_size">14sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="stroke_size">1dp</dimen>
+    <dimen name="textinput_edittext_height">70dp</dimen>
+    <dimen name="textinput_edittext_height2">60dp</dimen>
+    <dimen name="textview_size_title_blue">16sp</dimen>
+    <dimen name="textview_size_title_grey">14sp</dimen>
+    <string name="aceptar">Aceptar</string>
+    <string name="btn_disabled" translatable="false">Button</string>
+    <string name="btn_primary" translatable="false">Button</string>
+    <string name="btn_primary_outline" translatable="false">Button</string>
+    <string name="btn_text" translatable="false">Button text</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="comentarios" translatable="false">Comentarios</string>
+    <string name="contrase_a" translatable="false">Contraseña</string>
+    <string name="default_prompt" translatable="false">Choose Item</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
+    <string name="edt_password" translatable="false">Contraseña</string>
+    <string name="ingresar_texto_aqu" translatable="false">Ingresar texto aquí…</string>
+    <string name="loading">Cargando…</string>
+    <string name="save">Guardar</string>
+    <string name="search">Buscar</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="wait_moment" ns1:ignore="Typos">Por favor, espere un momento</string>
+    <style name="Base.Widget.AppCompat.ListPopupWindow" parent="" ns1:override="true">
+        <item name="android:dropDownSelector">?attr/listChoiceBackgroundIndicator</item>
+        <item name="android:popupBackground">@drawable/round_text_spinner</item>
+        <item name="android:dropDownVerticalOffset">0dip</item>
+        <item name="android:dropDownHorizontalOffset">0dip</item>
+        <item name="android:dropDownWidth">50dp</item>
+    </style>
+    <style name="Widget.Coppel.Button.Outline.White" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textColor">@color/colorAzulDark</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/btn_primary_outline</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="strokeColor">@color/colorBlanco</item>
+    </style>
+    <style name="Widget.Coppel.Button.Primary.White" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textColor">@color/colorBlanco</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/btn_primary</item>
+        <item name="backgroundTint">@color/colorAzulDark</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="strokeColor">@color/colorAzulDark</item>
+    </style>
+    <style name="Widget.Coppel.Button.Text.White" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textColor">@color/colorAzulDark</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/btn_text</item>
+        <item name="backgroundTint">@color/transparent</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="strokeColor">@color/transparent</item>
+    </style>
+    <style name="Widget.Coppel.Checkbox.Primary.White" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorGrisDisabled</item>
+        <item name="android:text">Option 1</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+    </style>
+    <style name="Widget.Coppel.Edittext.Multiline.Primary.Stroke.White" parent="MaterialBaseBaseTheme">
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:minLines">2</item>
+        <item name="android:background">@drawable/round_edittext</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.Edittext.Multiline.Primary.White" parent="MaterialBaseBaseTheme">
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:minLines">2</item>
+        <item name="android:background">@drawable/round_edittext_v1</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.Edittext.Password.Stroke.White" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/round_edittext</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:paddingLeft">@dimen/control_padding</item>
+        <item name="android:paddingRight">@dimen/control_padding</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.Edittext.Password.White" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/round_edittext_v1</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:paddingLeft">@dimen/control_padding</item>
+        <item name="android:paddingRight">@dimen/control_padding</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.Edittext.Primary.Stroke.White" parent="MaterialBaseBaseTheme">
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@drawable/round_edittext_v1</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+
+    </style>
+    <style name="Widget.Coppel.Edittext.Primary.White" parent="MaterialBaseBaseTheme">
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@drawable/round_edittext</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+
+    </style>
+    <style name="Widget.Coppel.RadioButton.Primary.Blue" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:text">Opción</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimary">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorTextDisabled</item>
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/colorVerde</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorGrisDisabled</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/colorGrisDisabled</item>
+        <item name="backgroundTint">@color/colorAzulDark</item>
+        <item name="buttonTint">@color/colorAzulDark</item>
+    </style>
+    <style name="Widget.Coppel.RadioButton.Primary.White" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:text">Opción</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimary">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorGrisDisabled</item>
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/colorVerde</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorGrisDisabled</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/colorGrisDisabled</item>
+        <item name="buttonTint">@color/colorAzulDark</item>
+    </style>
+    <style name="Widget.Coppel.Spinner.White" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edittext_height</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:background">@drawable/round_text_spinner</item>
+        <item name="android:popupBackground">@drawable/round_text_spinner</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+    <style name="Widget.Coppel.Switch.Blue.White" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="android:paddingLeft">@dimen/control_padding</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:text"> Ejemplo </item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimary">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorGrisTexto</item>
+
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/colorAzulDark</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorGrisDisabled
+        </item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/colorGrisDisabled
+        </item>
+    </style>
+    <style name="Widget.Coppel.Switch.Green.White" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="android:paddingLeft">@dimen/control_padding</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:text"> Ejemplo </item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimary">@color/colorGrisTexto</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorGrisTexto</item>
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/colorVerde</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorGrisDisabled</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/colorGrisDisabled</item>
+    </style>
+    <style name="Widget.Coppel.TextInput.Edittext.Multiline.Primary.White" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">@dimen/edittext_text_size</item>
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:minLines">2</item>
+        <item name="background">@color/colorBlanco</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.TextInput.Edittext.Password.Primary.White" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.TextInput.Edittext.Primary.White" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.TextLabel.TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">@color/colorGrisHintTexto</item>
+        <item name="android:textColor">@color/colorGrisHintTexto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+    <style name="Widget.Coppel.Textview.Title.Azul.White" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorAzulDark</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:textSize">@dimen/textview_size_title_blue</item>
+        <item name="android:text">Title blue example</item>
+    </style>
+    <style name="Widget.Coppel.Textview.Title.Gris.White" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorGrisTexto</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/textview_size_title_grey</item>
+        <item name="android:text">Text grey example</item>
+    </style>
+    <style name="Widget.Coppel.Toolbar.PrimarySurface.White" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+        <item name="android:tint">@color/colorAzulDark</item>
+    </style>
+</resources>

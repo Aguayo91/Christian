@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 5/09/19 01:12 PM
+  ~ Description:
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:color="@color/colorAzulDark" />
+    <item  android:state_focused="false" android:color="@color/transparent"/>
+</selector>

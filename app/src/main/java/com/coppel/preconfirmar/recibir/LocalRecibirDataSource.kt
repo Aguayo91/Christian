@@ -14,6 +14,8 @@ class LocalRecibirDataSource(
     private val motosDao: MotosDao,
     private val iniciosurtidoDao: IniciarSurtidoDao,
     private val consultarKeyXDao: ConsultarKeyXDao,
+    private val consultarDetalleMasterDao: DetalleMasterDao,
+    private val consultarfaltantesDao: FaltantesDao
 ){
 
 
@@ -93,4 +95,9 @@ class LocalRecibirDataSource(
 
         consultarKeyXDao.saveConsultarKeyX(consultarKeyXEntity)
     }
+
+    suspend fun saveConsultarFaltantes(faltantesListEntity: FaltantesListEntity){
+        consultarfaltantesDao.saveFaltantes(faltantesListEntity)
+    }
+
 }

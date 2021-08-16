@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Recepcion_de_Surtido_Muebles.iml" filepath="$PROJECT_DIR$/.idea/modules/Recepcion_de_Surtido_Muebles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Recepcion_de_Surtido_Muebles.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Recepcion_de_Surtido_Muebles.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Recepcion_de_Surtido_Muebles.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Recepcion_de_Surtido_Muebles.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scanner/Recepcion_de_Surtido_Muebles.scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/scanner/Recepcion_de_Surtido_Muebles.scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ui/Recepcion_de_Surtido_Muebles.ui.iml" filepath="$PROJECT_DIR$/.idea/modules/ui/Recepcion_de_Surtido_Muebles.ui.iml" />
+    </modules>
+  </component>
+</project>

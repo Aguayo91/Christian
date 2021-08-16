@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="reference" name="alertDialogTheme"/>
+    <attr format="reference" name="snackBarTextColor"/>
+    <attr format="reference" name="toolbarTheme"/>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorAmarillo">#FEDD2D</color>
+    <color name="colorAzulDark">#006EB9</color>
+    <color name="colorAzulDarker">#005baa</color>
+    <color name="colorAzulHint">#82C9FA</color>
+    <color name="colorAzulPrimary">#00ADEE</color>
+    <color name="colorAzulSombreado">#CCE2ECF7</color>
+    <color name="colorBackground">#F7F7F7</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlanco">#FFFFFE</color>
+    <color name="colorGris">#DDDDDD</color>
+    <color name="colorGrisHintTexto">#80536473</color>
+    <color name="colorGrisTexto">#536473</color>
+    <color name="colorVerde">#87C544</color>
+    <color name="dividerColor">#F0F0F0</color>
+    <color name="grey600">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="materialDividerColor">#1f000000</color>
+    <color name="transparent">#00000000</color>
+    <string name="aceptar">Accept</string>
+    <string name="cancelar">Cancel</string>
+    <string name="dar_permisos">Give permissions</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="ip_file_resolver_not_found">%1$s file with the URLs, not found in SD Card</string>
+    <string name="loading">Loading…</string>
+    <string name="message_internet_connection">No internet connection</string>
+    <string name="message_server_error">A problem has occurred in the server, please try again later</string>
+    <string name="permisos">Permissions</string>
+    <string name="permisos_messages">To let the app connect to internet, external storage access permissions is required.</string>
+    <string name="save">Save</string>
+    <string name="search">Search</string>
+    <string name="wait_moment">Please, wait a moment</string>
+    <style name="Theme.Coppel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor" ns1:ignore="NewApi">@color/colorAzulDark</item>
+        <item name="android:navigationBarColor" ns1:ignore="NewApi">@color/colorBlack</item>
+        <item name="android:windowLightNavigationBar" ns1:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" ns1:ignore="NewApi">?colorControlHighlight</item>
+
+        <item name="colorPrimaryDark">?colorPrimaryVariant</item>
+        <item name="colorAccent">?colorSecondary</item>
+        <item name="colorControlHighlight">@color/md_grey_300</item>
+
+        <item name="toolbarTheme">@style/ThemeOverlay.Coppel.Toolbar</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+
+    </style>
+    <style name="Theme.Coppel.Blue" parent="Theme.Coppel">
+        <item name="colorPrimary">@color/colorAzulDark</item>
+        <item name="colorPrimaryVariant">@color/colorAzulDarker</item>
+        <item name="colorSecondary">@color/colorAzulPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorAzulSombreado</item>
+
+        <item name="android:colorBackground">@color/colorBlanco</item>
+        <item name="colorSurface">@color/colorAzulDarker</item>
+        <item name="colorError">@color/md_red_900</item>
+
+        <item name="colorOnPrimary">@color/colorBlanco</item>
+        <item name="colorOnSecondary">@color/colorBlanco</item>
+        <item name="colorOnError">@color/md_red_900</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowLightStatusBar" ns1:ignore="NewApi">false</item>
+
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
+
+        <item name="toolbarStyle">@style/Widget.Coppel.Toolbar.PrimarySurface.Blue</item>
+
+        <item name="actionModeStyle">@style/Widget.Coppel.ActionMode.Blue</item>
+        <item name="actionModeCloseButtonStyle">@style/Widget.Coppel.Blue.ActionMode.CloseMode.Light</item>
+
+        <item name="android:tint">@color/colorBlanco</item>
+
+        <item name="material_drawer_primary_icon">@color/material_drawer_primary_icon</item>
+        <item name="material_drawer_background">@color/colorAzulDark</item>
+
+        <item name="toolbarTheme">@style/ThemeOverlay.Coppel.Toolbar.Blue</item>
+        <item name="snackBarTextColor">@color/colorAmarillo</item>
+
+    </style>
+    <style name="Theme.Coppel.White" parent="Theme.Coppel">
+        <item name="colorPrimary">@color/colorBlanco</item>
+        <item name="colorPrimaryVariant">@color/colorAzulSombreado</item>
+        <item name="colorSecondary">@color/colorAzulDark</item>
+        <item name="colorSecondaryVariant">@color/colorAzulPrimary</item>
+
+        <item name="android:colorBackground">@color/colorBlanco</item>
+        <item name="colorSurface">@color/colorAzulSombreado</item>
+        <item name="colorError">@color/md_red_900</item>
+
+        <item name="colorOnPrimary">@color/colorAzulDark</item>
+        <item name="colorOnSecondary">@color/colorBlanco</item>
+        <item name="colorOnError">@color/md_red_900</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowLightStatusBar" ns1:ignore="NewApi">true</item>
+
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
+
+        <item name="toolbarStyle">@style/Widget.Coppel.Toolbar.PrimarySurface.White</item>
+        <!--        <item name="android:tint">@color/color_azul_dark_coppel</item>-->
+
+        <item name="actionModeStyle">@style/Widget.Coppel.ActionMode.White</item>
+
+        <item name="snackBarTextColor">@color/colorAmarillo</item>
+        <item name="toolbarTheme">@style/ThemeOverlay.Coppel.Toolbar.White</item>
+
+
+    </style>
+    <style name="ThemeOverlay.Coppel.Toolbar" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:fontFamily">@font/circular_std_bold</item>
+    </style>
+    <style name="ThemeOverlay.Coppel.Toolbar.Blue" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:editTextColor">@color/colorBlanco</item>
+        <item name="android:textColorHint">@color/colorAzulSombreado</item>
+    </style>
+    <style name="ThemeOverlay.Coppel.Toolbar.White" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:editTextColor">@color/colorAzulDark</item>
+        <item name="android:textColorHint">@color/colorAzulHint</item>
+    </style>
+    <style name="Widget.Coppel.ActionMode.Blue" parent="Base.Widget.AppCompat.ActionMode">
+        <item name="titleTextStyle">@style/Widget.Coppel.ActionMode.Title.Blue</item>
+    </style>
+    <style name="Widget.Coppel.ActionMode.Title.Blue" parent="TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">@color/colorAzulPrimary</item>
+    </style>
+    <style name="Widget.Coppel.ActionMode.Title.White" parent="TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">@color/colorAzulDark</item>
+    </style>
+    <style name="Widget.Coppel.ActionMode.White" parent="Base.Widget.AppCompat.ActionMode">
+        <item name="titleTextStyle">@style/Widget.Coppel.ActionMode.Title.White</item>
+    </style>
+    <style name="Widget.Coppel.Blue.ActionMode.CloseMode.Light" parent="Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:tint">?colorAccent</item>
+    </style>
+    <style name="Widget.Coppel.Button.TextButton.Dialog.White" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAzulDark</item>
+    </style>
+    <style name="Widget.Coppel.Toolbar.PrimarySurface.Blue" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+    </style>
+    <style name="Widget.Coppel.Toolbar.PrimarySurface.White" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+        <item name="android:tint">@color/colorAzulDark</item>
+    </style>
+</resources>

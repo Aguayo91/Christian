@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 23/10/19 03:36 PM
+  ~ Description:
+  -->
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:useMaterialThemeColors="false"
+        app:buttonTint="@color/colorAzulDark"
+        style="@style/Widget.Coppel.RadioButton.Primary.White"
+        />
+
+
+</merge>

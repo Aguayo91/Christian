@@ -1,0 +1,256 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="false"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:id="@+id/titulo_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_background"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:contentDescription="@string/content_description_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/circularstd_bold"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            android:layout_marginEnd="10dp"
+            android:text="@string/titulo_jaba_sin_etiqueta"
+            android:textColor="@color/blue_300" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/titulo_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_background"
+        android:orientation="horizontal"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textnota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/circularstd_book"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="@string/titulo_jaba_fragment"
+            android:textColor="@color/fonts" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/content_description_raya"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/muebles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/gray_background"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor= "@color/fonts"
+                    android:fontFamily="@font/circularstd_book"
+                    android:text="@string/jaba_muebles"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:contentDescription="@string/content_description_chevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_chevron_gray"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/content_description_raya"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/celulares"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/gray_background"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.6"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor= "@color/fonts"
+                    android:fontFamily="@font/circularstd_book"
+                    android:text="@string/jaba_celulares"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:contentDescription="@string/content_description_chevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_chevron_gray"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/content_description_raya"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/suministros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/gray_background"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor= "@color/fonts"
+                    android:fontFamily="@font/circularstd_book"
+                    android:text="@string/jaba_suministros"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:contentDescription="@string/content_description_chevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_chevron_gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/content_description_raya"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ropa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/gray_background"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor= "@color/fonts"
+                    android:fontFamily="@font/circularstd_book"
+                    android:text="@string/jaba_ropa"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:contentDescription="@string/content_description_chevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_chevron_gray"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/content_description_raya"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

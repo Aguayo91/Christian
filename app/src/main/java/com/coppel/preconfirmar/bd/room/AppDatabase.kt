@@ -20,6 +20,7 @@ import com.coppel.preconfirmar.entities.*
         IniciarSurtidoListEntity::class,
         ConsultarKeyXEntity::class,
         DetalleMasterListEntity::class,
+        FaltantesListEntity::class,
         Todo::class],
     version = 1, exportSchema = false
 )
@@ -37,6 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun todoDao(): TodoDao
     abstract fun consultarkeyXDao(): ConsultarKeyXDao
     abstract fun consultarDetalleMasterDao(): DetalleMasterDao
+    abstract fun faltantesDao():FaltantesDao
 
     companion object {
 
@@ -47,7 +49,7 @@ abstract class AppDatabase : RoomDatabase() {
             INSTANCE = INSTANCE ?: Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
-                "coppel_bd"
+                "bd_coppel"
             ).build()
             return INSTANCE!!
 

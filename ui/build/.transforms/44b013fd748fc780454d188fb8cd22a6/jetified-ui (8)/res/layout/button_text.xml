@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 26/08/19 09:04 AM
+  ~ Description:
+  -->
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_text_control"
+            style="@style/Widget.Coppel.Button.Text.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="@dimen/corner_radius"
+            app:strokeColor="@color/transparent"
+            android:background="@color/transparent"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:rippleColor="@color/colorAzulBtnRipple"/>
+</merge>

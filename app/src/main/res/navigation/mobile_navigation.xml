@@ -11,6 +11,54 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
 
+        <action
+            android:id="@+id/action_nav_home_to_jabaFragment"
+            app:destination="@id/jabaFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_salirFragment"
+            app:destination="@id/salirFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_loteoFragment"
+            app:destination="@id/loteoFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/salirFragment"
+        android:name="com.coppel.preconfirmar.preconfirmar.SalirFragment"
+        android:label="fragment_salir"
+        tools:layout="@layout/fragment_salir" >
+        <action
+            android:id="@+id/action_salirFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </dialog>
+    <dialog
+        android:id="@+id/jabaFragment"
+        android:name="com.coppel.preconfirmar.preconfirmar.JabaFragment"
+        android:label="JabaFragment" >
+        <action
+            android:id="@+id/action_jabaFragment_to_jabaSinEtiquetaFragment"
+            app:destination="@id/jabaSinEtiquetaFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/jabaSinEtiquetaFragment"
+        android:name="com.coppel.preconfirmar.preconfirmar.JabaSinEtiquetaFragment"
+        android:label="fragment_jaba_sin_etiqueta"
+        tools:layout="@layout/fragment_jaba_sin_etiqueta" >
+        <action
+            android:id="@+id/action_jabaSinEtiquetaFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <argument
+            android:name="mastergenerada"
+            app:argType="string"
+            android:defaultValue="M" />
+    </fragment>
+    <fragment
+        android:id="@+id/loteoFragment"
+        android:name="com.coppel.preconfirmar.loteo.LoteoFragment"
+        android:label="fragment_loteo"
+        tools:layout="@layout/fragment_loteo" >
+        <action
+            android:id="@+id/action_loteoFragment_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 
 

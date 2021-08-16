@@ -171,6 +171,8 @@ class Pref(val context: Context) {
     }
 
 
+
+
     val TIEMPO_MILLI_PRECONFIRMAR = "TIEMPO_MILLIPRECONFIRMAR"
     fun guardarMillifinishPreconfirmar(value: Long) {
         storage.edit().putLong(TIEMPO_MILLI_PRECONFIRMAR, value).apply()
@@ -206,5 +208,23 @@ class Pref(val context: Context) {
 
     fun obtenerResultadoProgress():Int{
         return storage.getInt(RESULTADO_PROGRESS, -1)
+    }
+
+    val SIN_ETIQUETA = "SIN_ETIQUETA"
+    fun storageSinEtiqueta(value: Int) {
+        storage.edit().putInt(SIN_ETIQUETA, value).apply()
+    }
+
+    fun getSinEtiqueta(): Int {
+        return storage.getInt(SIN_ETIQUETA, 0)
+    }
+
+    val FINALIZAR_PRECONFIRMACION = "FINALIZAR_PRECONFIRMACION"
+    fun guardarFINALPRECONFIRMACION(value: Boolean) {
+        storage.edit().putBoolean(FINALIZAR_PRECONFIRMACION, value).apply()
+    }
+
+    fun obtenerFINALPRECONFIRMACION(): Boolean {
+        return storage.getBoolean(FINALIZAR_PRECONFIRMACION, false)
     }
 }

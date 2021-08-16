@@ -16,6 +16,20 @@ interface MueblesDao {
     suspend fun saveMuebles(surtidoMueblesListEntity: SurtidoMueblesListEntity)
 
 
+
+
+    @Query("SELECT * FROM surtidomuebleslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
+    suspend fun getDescripcionCodigo(icodigo:String?):List<SurtidoMueblesListEntity>
+
+
+    @Query("UPDATE surtidomuebleslistentity SET ilectura = 1 where sMaster = :smaster AND iKeyx = :ikeyx")
+    suspend fun updatListMaster(smaster: String?, ikeyx : Int)
+
+
+
+
+
+
     @Query("DELETE FROM surtidocelulareslistentity  WHERE iKeyx = 0")
     suspend fun deleteNull()
 
@@ -32,11 +46,10 @@ interface MueblesDao {
     @Query("SELECT iMoto FROM surtidomuebleslistentity WHERE iCodigo = :icodigo" )
     suspend fun getDescripcionMoto(icodigo: Int?):Int?
 
-    @Query("SELECT * FROM surtidomuebleslistentity WHERE sMaster = :smaster AND iLectura = :lectura" )
-    suspend fun getDescripcionMaster(smaster: String?, lectura : Int):List<SurtidoMueblesListEntity>
+    @Query("SELECT * FROM surtidomuebleslistentity WHERE sMaster = :smaster AND iLectura = :lectura AND :iRubro" )
+    suspend fun getDescripcionsMasterMuebles(smaster: String?, lectura : Int, iRubro:Int):List<SurtidoMueblesListEntity>
 
-    @Query("SELECT * FROM surtidomuebleslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
-    suspend fun getDescripcionCodigo(icodigo:String?):List<SurtidoMueblesListEntity>
+
 
     @Query("DELETE FROM surtidomuebleslistentity  WHERE iFolioSurtido <> :folioactual")
     suspend fun deleteNull(folioactual:Int)
@@ -66,8 +79,7 @@ interface MueblesDao {
     @Query("UPDATE surtidomuebleslistentity SET iActa = :iacta where iKeyx = (select distinct iKeyx from surtidomuebleslistentity where iCodigo = :icodigo AND iLectura =1)")
     suspend fun updateListActa(iacta: Int, icodigo: Int?)
 
-    @Query("UPDATE surtidomuebleslistentity SET ilectura = 1 where sMaster = :smaster AND iKeyx = :ikeyx")
-    suspend fun updatListMaster(smaster: String?, ikeyx : Int)
+
 
     @Query("UPDATE surtidomuebleslistentity SET ilectura = 1 where iCodigo = :smaster AND iKeyx = :ikeyx")
     suspend fun updatListCodigo(smaster: String?, ikeyx : Int)

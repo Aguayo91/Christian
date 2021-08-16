@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Recepción Surtido Muebles</string>
+    <string name="app_loteo">Loteo Muebles</string>
     <string name="domain">com.coppel</string>
     <string name="globaldomain">coppel</string>
     <string name="application_inicio">Inicio de la Aplicación Recepción de Surtido APK1</string>
@@ -12,6 +13,7 @@
     <string name="content_description_raya">raya al piso</string>
     <string name="title_uploading">El dispositivo se está\n actualizando</string>
     <string name="loading">Loading…</string>
+    <string name="arealoteo">Área:</string>
     <string name="errorWs_reStartFun">Error… reintento automático</string>
     <string name="TransporCelular">"NetworkCapabilities.TRANSPORT_CELLULAR"</string>
     <string name="TransporWIFI">"NetworkCapabilities.TRANSPORT_WIFI"</string>
@@ -33,19 +35,17 @@
     <string name="icono_flecha_aceptar">icono flecha blanca</string>
     <string name="title_APK1">Error de Aplicación</string>
     <string name="message_APK1">Favor de Iniciar la Aplicación de Recepción de Surtido</string>
-
     <string name="title_sharedpreferences">Error de Aplicación</string>
     <string name="message_sharedpreferences">No se obtuvieron los valores iniciales</string>
-
     <string name="btn_aceptar_dialog">Aceptar</string>
     <string name="btn_yes">Sí</string>
     <string name="btn_no">No</string>
     <string name="title_error_assortment_folio">Folio</string>
     <string name="startActivity_APK2"><![CDATA[--------------startActivity App2 Confirmación Surtido Muebles------------------> ]]></string>
     <string name="startActivity_APK1"><![CDATA[--------------startActivity App1 Preconfirmación de Surtido Muebles------------------> ]]></string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="salirfragment">Si decide continuar, se eliminará la información leída de la Aplicación</string>
     <string name="menu_salir">Salir</string>
+    <string name="quiere_salir">¿Desea Salir?</string>
     <string name="menu_jaba">Jaba sin etiqueta</string>
     <string name="action_settings">Settings</string>
     <string name="menu_master_pendientes">Master Pendientes</string>
@@ -77,12 +77,69 @@
     <string name="tiempo_pausado">Tiempo en Pausa %1$d</string>
     <string name="tiempo_cancelado">Tiempo Cancelado %1$d</string>
     <string name="progress">%1$d%%</string>
+    <string name="btn_irregularidad_no">No</string>
+    <string name="btn_irregularidad_si">Si</string>
+    <string name="title_irregularidad">¿Desea generar una irregularidad en \n %1$s? </string>
+    <string name="toolbar_irregularidad">Irregularidad</string>
+    <string name="btn_cargo_irregularidad">Cargo</string>
+    <string name="btn_acta_irregularidad">Acta</string>
+    <string name="radiobutton_cargo_daniado">Dañado</string>
+    <string name="radiobutton_cargo_incompleto">Incompleto</string>
+    <string name="radiobutton_acta_faltante">Faltante</string>
+    <string name="radiobutton_acta_daniado">Dañado</string>
+    <string name="radiobutton_acta_incompleto">Incompleto</string>
+    <string name="btn_aceptar_cargo">Aceptar</string>
+    <string name="textview_title_driver_employee">Número empleado de chofer</string>
+    <string name="hint_driver_employee">No empleado de chofer</string>
+    <string name="alfa_numeric_mayusculas">1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="digitos">1234567890</string>
+    <string name="hint_acta">Folio Acta</string>
+    <string name="hint_NumUnidad">Nº Unidad</string>
+    <string name="hint_employee_Gte">Nº Empleado del Gte</string>
+    <string name="txtview_title_driver_employee">Nº Empleado de chofer</string>
+    <string name="hint_irregular_driver_employee">Nº empleado de chofer</string>
+    <string name="hint_employee_auditor">Nº empleado del Auditor</string>
+    <string name="hint_irregular_assortment">Folio surtido</string>
+    <string name="btn_continue_irregularidad">Aceptar</string>
+    <string name="btn_cancelar_irregularidad">Cancelar</string>
+    <string name="check_sellos">Sellos o Candado violado</string>
+    <string name="check_reten">Caja revisada en retén</string>
+    <string name="check_bitacora">Bitácora sin firmas</string>
+    <string name="check_laminas">Laminas Sueltas</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="hint_codigo">Código</string>
     <string name="hint_parcial">Parcial</string>
     <string name="sobrantes">S</string>
     <string name="exhibir">E</string>
     <string name="tx_irregular">Irregularidad</string>
-
-
+    <string name="subtitulo_jaba_fragment">Selecciona el rubro al cuál  pertenece la jaba sin etiqueta master</string>
+    <string name="titulo_jaba_fragment">¿Selecciona el rubro al cuál pertenece la jaba sin etiqueta master?</string>
+    <string name="jaba_muebles">Jaba Muebles</string>
+    <string name="jaba_celulares">Jaba Celulares</string>
+    <string name="jaba_suministros">Jaba Suministros</string>
+    <string name="jaba_ropa">Jaba Ropa</string>
+    <string name="item_captura_loteo">SIN MASTER</string>
+    <string name="eliminar_row">Eliminar</string>
+    <string name="titulo_jaba_sin_etiqueta">Jaba sin etiqueta</string>
+    <string name="titulo_grabar">Confirmar Jaba</string>
+    <string name="msg_grabar">Se realizará la confirmación de la jaba</string>
+    <string name="cantidad_loteo">Cantidad</string>
+    <string name="recibido_surtido">Recibi %1$d/%2$d </string>
+    <string name="aceptar_cantidad">Aceptar</string>
+    <string name="ingresa_cantidad_recibida">Ingresa cantidad recibida</string>
+    <string name="title_empty_gte">Nº Empleado del Gerente</string>
+    <string name="message_empty_gte">Favor de ingresar un número de Gerente válido</string>
+    <string name="title_empty_auditor">Nº Empleado de Auditor</string>
+    <string name="message_empty_auditor">Favor de ingresar un número de Auditor válido</string>
+    <string name="select_irregular">Seleciona la irregularidad</string>
+    <string name="title_empty_unidad">Nº de Unidad</string>
+    <string name="message_empty_unidad">Favor de ingresar un número de Unidad válido</string>
+    <string name="message_error_driver_employee">Favor de ingresar un número de Chofer válido</string>
+    <string name="select_opcion">Seleciona una opción</string>
+    <string name="title_empty_folioacta">Folio Acta</string>
+    <string name="message_empty_folioacta">Favor de ingresar un número de Folio Acta válido</string>
+    <string name="title_error_driver_employee">Empleado Chofer</string>
+    <string name="warning_title_internet">El dispositivo no se encuentra conectado a Internet.</string>
+    <string name="warning_message_internet">Favor de acercarse al área de cajas.</string>
+    <string name="titulo_imei">IMEI: </string>
 </resources>

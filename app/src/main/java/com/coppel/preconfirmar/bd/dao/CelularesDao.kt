@@ -16,6 +16,24 @@ interface CelularesDao {
     @Query("DELETE FROM surtidocelulareslistentity")
     suspend fun deleteAll()
 
+
+
+    @Query("UPDATE surtidocelulareslistentity SET ilectura = 1 where sMaster = :smaster AND iKeyx = :iKey")
+    suspend fun updatListMasterCelulares(smaster: String?,iKey :Int?)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveCelulares(surtidoCelularesListEntity: SurtidoCelularesListEntity)
 
@@ -28,8 +46,6 @@ interface CelularesDao {
     @Query("SELECT * FROM surtidocelulareslistentity WHERE sMaster = :smaster AND iLectura = :lectura" )
     suspend fun getDescripcionMasterCelulares(smaster: String?, lectura :Int ): List<SurtidoCelularesListEntity>
 
-    @Query("UPDATE surtidocelulareslistentity SET ilectura = 1 where sMaster = :smaster AND iKeyx = :iKey")
-    suspend fun updatListMasterCelulares(smaster: String?,iKey :Int?)
 
     @Query("SELECT * FROM surtidocelulareslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
     suspend fun getDescripcionCelularesCodigo(icodigo:String):List<SurtidoCelularesListEntity>

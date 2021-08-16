@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 19/08/19 11:59 AM
+  ~ Description:
+  -->
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorGrisHintTexto"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginRight="@dimen/activity_margin"
+        app:boxBackgroundColor="@color/colorBlanco"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
+        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
+        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
+        app:boxCornerRadiusTopStart="@dimen/corner_radius"
+        app:boxStrokeColor="@color/colorAzulDark"
+        app:counterEnabled="true"
+        app:counterMaxLength="100"
+        app:hintTextColor="@color/colorGrisTexto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_primary_multiline_contr"
+            style="@style/Widget.Coppel.TextInput.Edittext.Multiline.Primary.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|top"
+            android:minLines="5"
+            android:textColorHint="@color/colorGrisHintTexto" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+</merge>

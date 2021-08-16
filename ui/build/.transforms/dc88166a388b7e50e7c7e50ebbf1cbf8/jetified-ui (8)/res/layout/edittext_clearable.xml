@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+
+    <com.coppel.framework.ui.util.clearedittext.ClearableEdt
+        android:id="@+id/etd_clearable_control"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:inputType="textFilter"
+        android:hint="@string/ingresar_texto_aqu"
+        android:background="@drawable/round_text_primary"
+        app:backgroundTint="@color/colorBlanco"
+        android:paddingRight="@dimen/control_padding"
+        android:paddingLeft="@dimen/control_padding"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:textSize="14sp"
+        android:layout_marginRight="@dimen/activity_margin"
+        android:fontFamily="@font/circular_std_medium"
+        android:textColor="@color/colorGrisTexto"
+        android:textColorHint="@color/colorGrisHintTexto" />
+
+
+</merge>

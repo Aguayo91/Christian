@@ -27,7 +27,7 @@ data class Todo(
     @ColumnInfo(name = "isChecked")
     var isChecked: Boolean = false,
 
-    @ColumnInfo(name = "tipo")
+    @ColumnInfo(name = "rubro")
     var tipo: Int,
 
     @ColumnInfo(name = "iKeyx")

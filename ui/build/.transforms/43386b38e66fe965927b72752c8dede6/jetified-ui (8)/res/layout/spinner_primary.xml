@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 19/08/19 11:59 AM
+  ~ Description:
+  -->
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginRight="@dimen/activity_margin"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        app:cardBackgroundColor="@color/colorBlanco"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinner1"
+            style="@style/Widget.Coppel.Spinner.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:entries="@array/default_Items"
+            android:prompt="@string/default_prompt"
+            app:ms_padding_right="@dimen/control_padding"
+            app:ms_arrow_tint="@color/colorAzulDark"
+            app:ms_background_color="#FFFFFF"
+            app:ms_text_color="@color/colorGrisTexto"
+            android:inputType="textNoSuggestions"/>
+
+    </androidx.cardview.widget.CardView>
+
+</merge>

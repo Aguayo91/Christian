@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 22/08/19 11:17 AM
+  ~ Description:
+  -->
+
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFFFFF"/>
+
+    <stroke android:width="@dimen/stroke_size"
+            android:color="@color/colorGrisDisabled"
+    />
+
+    <padding android:left="@dimen/control_padding"
+             android:top="2dp"
+             android:right="@dimen/control_padding"
+             android:bottom="2dp"/>
+
+    <corners android:radius="10dp" />
+</shape>

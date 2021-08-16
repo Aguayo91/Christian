@@ -8,6 +8,14 @@ import com.coppel.preconfirmar.entities.Todo
 
 @Dao
 interface TodoDao {
+
+    //Traer Master Pendientes por Capturar Lotear
+    @Query("SELECT * FROM todo WHERE isMaster = 1 AND MasterStatus = 0")
+    suspend fun getPendinetesLotear():List<Todo>
+
+
+
+
     @Query("SELECT * FROM todo")
     suspend fun getAllTodo():List<Todo>
 
@@ -35,9 +43,7 @@ interface TodoDao {
     @Query("SELECT * FROM Todo WHERE Master = '' ")
     fun getAllRowsTodo() : LiveData<List<Todo>>
 
-    //Traer Master Pendientes por Capturar Lotear
-    @Query("SELECT * FROM todo WHERE isMaster = 1 AND MasterStatus = 0")
-    suspend fun getPendinetesLotear():List<Todo>
+
 
     //Loteo la Master
     @Query("SELECT * FROM todo WHERE isMaster = 0 AND Master = :smaster")

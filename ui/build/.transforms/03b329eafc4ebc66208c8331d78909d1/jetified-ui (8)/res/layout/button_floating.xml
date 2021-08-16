@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ Copyright (c) 2019 Coppel S.A de C.V. All rights reserved.
+  ~ Created by: Arquitectura de Sistemas
+  ~ Author: ecampos
+  ~ Last Modified: 16/10/19 03:40 PM
+  ~ Description:
+  -->
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_add_ui"
+        app:backgroundTint="@color/colorAzulDark"
+        tools:ignore="RtlHardcoded,VectorDrawableCompat"
+        android:clickable="true"
+        android:longClickable="false"
+        app:tint="@color/colorBlanco"
+        app:rippleColor="@color/colorAzulBtnRipple"
+        android:focusable="true"
+        android:contentDescription="@string/todo" />
+
+</merge>

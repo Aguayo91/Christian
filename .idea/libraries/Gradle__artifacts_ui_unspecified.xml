@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:ui:unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ui/build/.transforms/13f6c79ac7f43d78534092e53f388460/jetified-ui (8)/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/ui/build/.transforms/13f6c79ac7f43d78534092e53f388460/jetified-ui (8)/res" />
+      <root url="file://$PROJECT_DIR$/ui/build/.transforms/13f6c79ac7f43d78534092e53f388460/jetified-ui (8)/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -53,6 +53,8 @@ class RecibirActivity : AppCompatActivity() {
                     AppDatabase.getDatabase(this).motosDao(),
                     AppDatabase.getDatabase(this).iniciarSurtidoDao(),
                     AppDatabase.getDatabase(this).consultarkeyXDao(),
+                    AppDatabase.getDatabase(this).consultarDetalleMasterDao(),
+                    AppDatabase.getDatabase(this).faltantesDao()
 
                     )
             )
@@ -180,6 +182,10 @@ class RecibirActivity : AppCompatActivity() {
                         R.string.getPuerto, iPuertoWS
                     )
                 )
+
+                val flagPreconfirmacion = storage.getBoolean("FINALIZAR_PRECONFIRMACION", false)
+                RxApplication.pref.guardarFINALPRECONFIRMACION(flagPreconfirmacion)
+                Log.d(TAG, "Flag se tiene una Loteo - Confirmación Activa")
                 Handler(Looper.getMainLooper()).postDelayed({
 
                     descargarSurtido()

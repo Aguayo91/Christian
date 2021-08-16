@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:core:unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/build/.transforms/498c0efc05704d9b3f67d95de6b41eb5/jetified-core (6)/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/core/build/.transforms/498c0efc05704d9b3f67d95de6b41eb5/jetified-core (6)/res" />
+      <root url="file://$PROJECT_DIR$/core/build/.transforms/498c0efc05704d9b3f67d95de6b41eb5/jetified-core (6)/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
