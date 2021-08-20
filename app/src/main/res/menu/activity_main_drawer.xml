@@ -8,9 +8,14 @@
         <item
             android:id="@+id/nav_jaba"
             android:title="@string/menu_jaba"
-            app:actionLayout="@layout/chevron"/>
+            app:actionLayout="@layout/chevron"
+            android:visible="true"/>
 
-
+        <item
+            android:id="@+id/nav_master"
+            android:title="@string/menu_master"
+            app:actionLayout="@layout/chevron"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_salir"
             android:title="@string/menu_salir"

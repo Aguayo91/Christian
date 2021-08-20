@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background"
+    tools:context=".preconfirmar.IrregularidadJabaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/texview_toolbar"
+            android:gravity="center_horizontal"
+            android:paddingStart="1dp"
+            android:paddingEnd="60dp"
+            android:text="@string/toolbar_irregularidad_ropa" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/start_irregularidad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline54"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5">
+
+        <TextView
+            android:id="@+id/title_sobrante"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/circularstd_bold"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/title_irregularidad_ropa"
+            android:textColor="@color/blue_500"
+            android:textSize="16sp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline51"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline51" />
+
+        <Button
+            android:id="@+id/btn_no"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/cardview_blue_redonded"
+            android:elevation="10dp"
+            android:text="@string/btn_irregularidad_no"
+            android:layout_marginTop="40dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline53"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3231"
+            app:layout_constraintStart_toStartOf="@+id/guideline33"
+            app:layout_constraintTop_toTopOf="@+id/guideline53" />
+
+        <Button
+            android:id="@+id/btn_si"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cardview_white_redonded"
+            android:elevation="10dp"
+            android:text="@string/btn_irregularidad_si"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_300"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline52"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3231"
+            app:layout_constraintStart_toStartOf="@+id/guideline33"
+            app:layout_constraintTop_toTopOf="@+id/guideline52"
+            app:layout_constraintVertical_bias="0.0" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/titulo_radioropa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guideline56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline51">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/circularstd_bold"
+            android:gravity="center"
+            android:text="@string/select_opcion"
+            android:textColor="@color/blue_300"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupIrregularidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:buttonTint="@color/blue_200"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/guideline51"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3331"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline33311"
+            app:layout_constraintTop_toTopOf="@+id/guideline51"
+            app:layout_constraintVertical_bias="0.0">
+
+            <RadioButton
+                android:id="@+id/radiobutton_jaba_danada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginTop="30dp"
+                android:buttonTint="@color/blue_500"
+                android:fontFamily="@font/circularstd_bold"
+                android:text="@string/irregularidad_ropa_carton_roto"
+                android:textColor="@color/blue_200" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_jaba_con_sellos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginTop="30dp"
+                android:buttonTint="@color/blue_500"
+                android:fontFamily="@font/circularstd_bold"
+                android:text="@string/irregularidad_ropa_carton_abierto"
+                android:textColor="@color/blue_200"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_jaba_abierta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginTop="30dp"
+                android:buttonTint="@color/blue_500"
+                android:fontFamily="@font/circularstd_bold"
+                android:text="@string/irregularidad_ropa_empaque"
+                android:textColor="@color/blue_200"
+                android:visibility="visible" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/boton_aceptar_jaba"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/cardview_blue_redonded"
+            android:elevation="10dp"
+            android:text="@string/irregularidad_jaba_aceptar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline521"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.29" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline331"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3231"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3331"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline33311"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

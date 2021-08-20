@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.coppel.preconfirmar.preconfirmar.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_nav_home_to_jabaFragment"
@@ -18,8 +18,11 @@
             android:id="@+id/action_nav_home_to_salirFragment"
             app:destination="@id/salirFragment" />
         <action
-            android:id="@+id/action_nav_home_to_loteoFragment"
-            app:destination="@id/loteoFragment" />
+            android:id="@+id/action_nav_home_to_rubrosFragment"
+            app:destination="@id/rubrosFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_listaLoteoFragment"
+            app:destination="@id/listaLoteoFragment" />
     </fragment>
     <dialog
         android:id="@+id/salirFragment"
@@ -56,9 +59,31 @@
         android:name="com.coppel.preconfirmar.loteo.LoteoFragment"
         android:label="fragment_loteo"
         tools:layout="@layout/fragment_loteo" >
+        <argument
+            android:name="foliogenerado"
+            app:argType="string"
+            android:defaultValue="f" />
+        <argument
+            android:name="tipoparcial"
+            app:argType="string"
+            android:defaultValue="p" />
+    </fragment>
+    <dialog
+        android:id="@+id/rubrosFragment"
+        android:name="com.coppel.preconfirmar.preconfirmar.RubrosFragment"
+        android:label="RubrosFragment" >
         <action
-            android:id="@+id/action_loteoFragment_to_nav_home"
+            android:id="@+id/action_rubrosFragment_to_nav_home"
             app:destination="@id/nav_home" />
+    </dialog>
+    <fragment
+        android:id="@+id/listaLoteoFragment"
+        android:name="com.coppel.preconfirmar.loteo.ListaLoteoFragment"
+        android:label="fragment_lista_loteo"
+        tools:layout="@layout/fragment_lista_loteo" >
+        <action
+            android:id="@+id/action_listaLoteoFragment_to_loteoFragment"
+            app:destination="@id/loteoFragment" />
     </fragment>
 
 

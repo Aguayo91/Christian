@@ -29,6 +29,7 @@ import com.coppel.preconfirmar.application.RxApplication
 import com.coppel.preconfirmar.databinding.FragmentHomeBinding
 import com.coppel.preconfirmar.entities.Todo
 import com.coppel.preconfirmar.singleton.OnClickListenerAdapter
+import com.orhanobut.logger.Logger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -42,11 +43,15 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
         private val TAG = HomeFragment::class.qualifiedName
         private val todoList = mutableListOf<Todo>()
         private var capturadas = 2
+
         private var progr = 0
         private var contadorclick = 0
         private var isPaused = false
         private var isCancelled = false
         private var resumeFromMillis: Long = 0
+
+
+        lateinit var itemTouchHelper :ItemTouchHelper
 
         val hora = RxApplication.pref
             .obtenerHoraPreconfirmar()
@@ -75,10 +80,21 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
+        hideKeyboard()
+
+
+        if(RxApplication.pref.obtenerFINALPRECONFIRMACION()) {
+            val action = HomeFragmentDirections.actionNavHomeToListaLoteoFragment()
+            findNavController().navigate(action)
+            sharedViewModel.obtieneDetalleLoteo()
+
+        }
+
 
         val millisegundostotales:Long =
             RxApplication.pref.obtenerMillifinishPreconfirmar()
-        Log.d(TAG, "Tiempo en Millisegundos Totales $millisegundostotales")
+
+        Logger.d( "Tiempo en Millisegundos Totales $millisegundostotales")
         object : CountDownTimer(15000000, COUNTDOWNTIMER) {
 
             @SuppressLint("SetTextI18n")
@@ -97,13 +113,15 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
             }
         }.start()
 
-
-        if(RxApplication.pref.obtenerFINALPRECONFIRMACION()) {
-            val action = HomeFragmentDirections.actionNavHomeToLoteoFragment()
-            findNavController().navigate(action)
-            sharedViewModel.obtieneDetalleLoteo()
-
+        binding.miloteo.setOnClickListener {
+            val action = HomeFragmentDirections.actionNavHomeToListaLoteoFragment()
+                findNavController().navigate(action)
+                sharedViewModel.obtieneDetalleLoteo()
         }
+
+
+
+
 
         bindingRecyclerview()
 
@@ -135,6 +153,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
 
                 binding.btnGrabarSurtido.isEnabled = false
                 binding.btnGrabarSurtido.alpha = 0.3F
+
             } else {
 
                 sharedViewModel.alertainformativa(
@@ -148,21 +167,36 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
 
         binding.btnCapturarScanner.setOnClickListener {
             RxApplication.pref.guardarScanner(binding.ediScannerCaptura.text.toString())
-            if (binding.ediScannerCaptura.text.toString().isNotEmpty() &&
-                RxApplication.pref.obtenerScanner().startsWith("M")||
-                RxApplication.pref.obtenerScanner().startsWith("C")||
-                RxApplication.pref.obtenerScanner().startsWith("S")) {
+            if (
+                binding.ediScannerCaptura.text.toString().isNotEmpty() &&
+                RxApplication.pref.obtenerScanner().startsWith("M") ||
 
-                sharedViewModel.buscaCodigosMaster(
-                    RxApplication.pref.obtenerScanner())
-                hideKeyboard()
+                binding.ediScannerCaptura.text.toString().isNotEmpty() &&
+                RxApplication.pref.obtenerScanner().startsWith("C")||
+
+                binding.ediScannerCaptura.text.toString().isNotEmpty() &&
+                RxApplication.pref.obtenerScanner().startsWith("S")
+            )
+
+
+
+                {
+
+                sharedViewModel.buscarMasterPorLetra(RxApplication.pref.obtenerScanner())
+
                 binding.ediScannerCaptura.text?.clear()
 
+                hideKeyboard()
+
+
             }
-            if (binding.ediScannerCaptura.text.toString().isNotEmpty()){
+            if (binding.ediScannerCaptura.text.toString().isNotEmpty()
+                && binding.ediScannerCaptura.text.toString().length <=18){
+
                 sharedViewModel.buscasMasterCodigos(RxApplication.pref.obtenerScanner())
                 hideKeyboard()
                 binding.ediScannerCaptura.text?.clear()
+
             }
 
         }
@@ -179,15 +213,19 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
                     binding.ediScannerCaptura.setText(scanner)
 
                 CoroutineScope(Dispatchers.Main).launch {
-                    sharedViewModel.buscaCodigosMaster(
-                        RxApplication.pref.
-                        obtenerScanner())
+                    sharedViewModel.buscasMasterCodigos(RxApplication.pref.obtenerScanner())
                 }
 
                 binding.ediScannerCaptura.text?.clear()
 
             }
         }
+    }
+
+
+    fun openRubros(homeFragment: HomeFragment, todo: Todo){
+        val action = HomeFragmentDirections.actionNavHomeToRubrosFragment()
+        homeFragment.findNavController().navigate(action)
     }
 
 
@@ -198,8 +236,35 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
             obtenerPorcentaje(totales)
         })
 
-        sharedViewModel.getNormal().observe(viewLifecycleOwner,{normal->
+        sharedViewModel.getNormal().observe(viewLifecycleOwner, { normal ->
             sharedViewModel.saveTodo(normal)
+        })
+
+        sharedViewModel.invalida.observe(viewLifecycleOwner, { invalida ->
+            activity?.runOnUiThread {
+                Handler(Looper.getMainLooper()).postDelayed({
+                    etiquetaMaster("Etiqueta Inválida", "No existe en el surtido")
+                    mediaPlayers =
+                        MediaPlayer.create(RxApplication.applicationContext(), R.raw.alerta)
+                    mediaPlayers.start()
+                }, 0)
+            }
+        })
+
+        sharedViewModel.getPisoyRack().observe(viewLifecycleOwner,{piso->
+            sharedViewModel.saveTodo(piso)
+            activity?.runOnUiThread {
+                Handler(Looper.getMainLooper()).postDelayed({
+
+                    mediaPlayers = MediaPlayer.create(RxApplication.applicationContext(), R.raw.exhibir)
+                    mediaPlayers.start()
+                }, 0)
+            }
+        })
+
+        sharedViewModel.mueblesbodega().observe(viewLifecycleOwner,{bodega->
+            sharedViewModel.saveTodo(bodega)
+
         })
 
 
@@ -207,9 +272,19 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
             if (leido.description == "leido") {
                 activity?.runOnUiThread {
                     Handler(Looper.getMainLooper()).postDelayed({
-                        etiquetaMaster("Master", "Esta master ya fue leída")
+                        etiquetaMaster("Etiqueta Master", "Esta etiqueta master ya fue leída")
                         mediaPlayers =
                             MediaPlayer.create(RxApplication.applicationContext(), R.raw.alerta)
+                        mediaPlayers.start()
+                    }, 0)
+                }
+            }
+
+            else if (leido.description == "sobrante") {
+                activity?.runOnUiThread {
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        openRubros(this, leido)
+                        mediaPlayers = MediaPlayer.create(RxApplication.applicationContext(), R.raw.sobrante)
                         mediaPlayers.start()
                     }, 0)
                 }
@@ -222,8 +297,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
             capturadas = todos.size
             adapter.setListTodo(todos)
             adapter.notifyDataSetChanged()
+
             sharedViewModel.obtenerTotales(RxApplication.pref.obtenerFoliodelSurtido().toInt())
         })
+
 
         sharedViewModel.getStartActivityIrregularidadMuebles().observe(viewLifecycleOwner, { todo ->
             startActivityIrregularidadesMuebles(todo)
@@ -301,6 +378,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
 
         btntoAccept.setOnClickListener {
             sharedViewModel.obtenerfaltantes().observe(viewLifecycleOwner, { muebles ->
+
+                itemTouchHelper.attachToRecyclerView(null)
                 adapter.setList(muebles)
                 adapter.notifyDataSetChanged()
 
@@ -394,8 +473,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnClickListenerAdapter {
         (binding.rvTodoItems.layoutManager as LinearLayoutManager).reverseLayout = true
         binding.tvMercanciaCapturada.visibility = View.VISIBLE
         binding.tvMercanciaPendiente.visibility = View.GONE
-        val itemTouchHelper = ItemTouchHelper(SwipeDeleteCallback(adapter))
+          itemTouchHelper = ItemTouchHelper(SwipeDeleteCallback(adapter))
         itemTouchHelper.attachToRecyclerView(binding.rvTodoItems)
+
+
+
+
     }
 
     private fun obtenerPorcentaje(valores: List<Int>) {

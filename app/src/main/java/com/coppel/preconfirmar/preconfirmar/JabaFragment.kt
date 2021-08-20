@@ -33,11 +33,9 @@ class JabaFragment: BottomSheetDialogFragment() {
             dismiss()
         }
 
-
-
         muebles.setOnClickListener {
             val surtidomuebles = "M"+
-                    incrementar()
+                    incrementarMuebles()
             sharedViewModel.obtenerdescripcion("M")
 
             val action = JabaFragmentDirections.actionJabaFragmentToJabaSinEtiquetaFragment(surtidomuebles)
@@ -45,21 +43,21 @@ class JabaFragment: BottomSheetDialogFragment() {
         }
         udi.setOnClickListener {
             val celulares = "C"+
-                    incrementar()
+                    incrementarCelulares()
             sharedViewModel.obtenerdescripcion("C")
             val action = JabaFragmentDirections.actionJabaFragmentToJabaSinEtiquetaFragment(celulares)
             findNavController().navigate(action)
         }
         moto.setOnClickListener {
             val suministros = "S"+
-                    incrementar()
+                    incrementarSuministros()
             sharedViewModel.obtenerdescripcion("S")
             val action = JabaFragmentDirections.actionJabaFragmentToJabaSinEtiquetaFragment(suministros)
             findNavController().navigate(action)
         }
         mensajeria.setOnClickListener {
             val ropa = "R"+
-                    incrementar()
+                    incrementarRopa()
             val action = JabaFragmentDirections.actionJabaFragmentToJabaSinEtiquetaFragment(ropa)
             findNavController().navigate(action)
         }
@@ -67,11 +65,33 @@ class JabaFragment: BottomSheetDialogFragment() {
         return rootview
     }
 
-    fun incrementar ():String{
-        var actual : Int = RxApplication.pref.getSinEtiqueta()
+    fun incrementarMuebles ():String{
+        var actual : Int = RxApplication.pref.obtenerSinEtiquetaMuebles()
         actual++
-        val masterGenerada :String  = actual.toString().padStart(5,'0')
-        RxApplication.pref.storageSinEtiqueta(masterGenerada.toInt())
-        return  masterGenerada
+        val masterMueblesGenerada :String  = actual.toString().padStart(5,'0')
+        RxApplication.pref.guardarSinEtiquetaMuebles(masterMueblesGenerada.toInt())
+        return  masterMueblesGenerada
+    }
+
+    fun incrementarCelulares ():String{
+        var actualcelualres : Int = RxApplication.pref.obtenerSinEtiquetaCelulares()
+        actualcelualres++
+        val masterCelularesGenerada :String  = actualcelualres.toString().padStart(5,'0')
+        RxApplication.pref.guardarSinEtiquetaCelulares(masterCelularesGenerada.toInt())
+        return  masterCelularesGenerada
+    }
+    fun incrementarSuministros ():String{
+        var actualsuministros : Int = RxApplication.pref.obtenerSinEtiquetaSuministros()
+        actualsuministros++
+        val masterSuministrosGenerada :String  = actualsuministros.toString().padStart(5,'0')
+        RxApplication.pref.guardarSinEtiquetaSuministros(masterSuministrosGenerada.toInt())
+        return  masterSuministrosGenerada
+    }
+    fun incrementarRopa ():String{
+        var actualropa : Int = RxApplication.pref.obtenerSinEtiquetaRopa()
+        actualropa++
+        val masterRopaGenerada :String  = actualropa.toString().padStart(5,'0')
+        RxApplication.pref.guardarSinEtiquetaRopa(masterRopaGenerada.toInt())
+        return  masterRopaGenerada
     }
 }

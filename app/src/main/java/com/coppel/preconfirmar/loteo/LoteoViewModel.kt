@@ -2,6 +2,7 @@ package com.coppel.preconfirmar.loteo
 
 import androidx.lifecycle.*
 import com.coppel.preconfirmar.entities.DetalleMasterListEntity
+import com.coppel.preconfirmar.entities.SinEtiqueta
 import com.coppel.preconfirmar.entities.Todo
 import com.coppel.preconfirmar.preconfirmar.HomeRepositorio
 import kotlinx.coroutines.launch
@@ -13,7 +14,7 @@ class LoteoViewModel(
     private lateinit var showIrregularidad: LiveData<Boolean>
     private lateinit var productosLoteados: MutableLiveData<List<Todo>>
     private lateinit var totalByMaster: MutableLiveData<Int>
-
+    private lateinit var loteados: LiveData<List<SinEtiqueta>>
     private lateinit var sMasterAlotear: MutableLiveData<String>
 
     private lateinit var showMasterCaptured : MutableLiveData<Boolean>
@@ -66,10 +67,10 @@ class LoteoViewModel(
                 Todo(
                     0,
                     s,
-                    "Ejemplo",
+                    "SIN MASTER",
                     false,
                     false,
-                    false,
+                    true,
                     false,
                     0,
                     0,
@@ -81,6 +82,11 @@ class LoteoViewModel(
 
         }
     }
+
+    /*suspend fun obtenerCapturadoLoteado():LiveData<List<SinEtiqueta>>{
+        loteados = repositorio.obtenerCapoturadoLoteo()
+        return loteados
+    }*/
 
     fun buscaCodigo(codigoCapturado: String) {
 
@@ -145,7 +151,7 @@ class LoteoViewModel(
                                 exhibir = false,
                                 irregularidad = false,
                                 isChecked = false,
-                                tipo = getTipo(sMasterAlotear.value!!),
+                                rubro = getTipo(sMasterAlotear.value!!),
                                 ikeyx = resultadoBusqueda[0].iKeyxPda,
                                 isMaster = 0,
                                 Master = sMasterAlotear.value!!,
@@ -202,7 +208,7 @@ class LoteoViewModel(
 
     fun clickIrregularidad(todo : Todo) {
 
-        when(todo.tipo){
+        when(todo.rubro){
             1 -> showIrregularidadMuebles.postValue(true)
             2-> showIrregularidadCelulares.postValue(true)
             3-> showIrregularidadSuministros.postValue(true)

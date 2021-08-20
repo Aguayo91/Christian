@@ -34,7 +34,7 @@ class TodoAdapter(
         )
     }
 
-    fun getList () : List<Todo> = todos
+    //fun getList () : List<Todo> = todos
 
     fun setListTodo(lista : List<Todo>){
         val tmpLista = mutableListOf<Todo>()
@@ -122,7 +122,7 @@ class TodoAdapter(
         holder.exhibir.isVisible = curTodo.exhibir
         holder.isChecked.isChecked = curTodo.irregularidad
 
-        when(curTodo.tipo){
+        when(curTodo.rubro){
             2,6,7 -> {
                 holder.irregularidad.isVisible = false
                 holder.isChecked.isVisible = false

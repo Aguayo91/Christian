@@ -209,7 +209,7 @@ class RecibirActivity : AppCompatActivity() {
             recibirViewModel.redInternetOnline(this@RecibirActivity) && RxApplication.pref.obtenerResultadoProgress()==-1
         ) {
 
-            progr += 75
+            progr += 55
             updateProgressBarEntity()
                 recibirViewModel.getSurtidoMuebles().observe(this@RecibirActivity) { result ->
                     when (result) {

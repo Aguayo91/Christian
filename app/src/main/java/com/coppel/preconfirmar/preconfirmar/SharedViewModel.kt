@@ -19,13 +19,20 @@ class SharedViewModel(
 ): ViewModel() {
 
     val savemuebles = MutableLiveData<String>()
+
     var totalesPorFolio: MutableLiveData<List<Int>>
+
     var finalizarsurtido:MutableLiveData<Boolean>
 
     private var normal: MutableLiveData<Todo>
-    private var etiquetaleida: MutableLiveData<Todo>
-    private lateinit var capturados: LiveData<List<Todo>>
+    private var pisorack: MutableLiveData<Todo>
     private var showRubros : MutableLiveData<Boolean>
+    private var etiquetaleida: MutableLiveData<Todo>
+    private var mueblesbodega: MutableLiveData<Todo>
+    var invalida: MutableLiveData<Boolean>
+
+
+    private lateinit var capturados: LiveData<List<Todo>>
 
     private var startIrregularidadMuebles: MutableLiveData<Todo>
     private var startIrregularidadCedis: MutableLiveData<Todo>
@@ -34,11 +41,22 @@ class SharedViewModel(
 
 
     init {
-        finalizarsurtido = MutableLiveData<Boolean>()
+
         totalesPorFolio = MutableLiveData()
+
+        finalizarsurtido = MutableLiveData<Boolean>()
+
         normal = MutableLiveData<Todo>()
+
         showRubros = MutableLiveData<Boolean>()
+
         etiquetaleida = MutableLiveData<Todo>()
+
+        pisorack = MutableLiveData<Todo>()
+
+        invalida = MutableLiveData<Boolean>()
+
+        mueblesbodega = MutableLiveData<Todo>()
 
         startIrregularidadMuebles = MutableLiveData<Todo>()
         startIrregularidadCedis = MutableLiveData<Todo>()
@@ -51,12 +69,15 @@ class SharedViewModel(
     fun getNormal() = normal
     fun getEtiquetaLeida()= etiquetaleida
     fun getSHowRubros() = showRubros
+    fun getPisoyRack()= pisorack
+    fun mueblesbodega ()= mueblesbodega
+
 
 
     fun saveTodo(todo : Todo){
         viewModelScope.launch {
             repositorio.saveTodo(todo)
-
+            showRubros.postValue(false)
         }
     }
 
@@ -78,6 +99,8 @@ class SharedViewModel(
         return capturados
     }
 
+
+
     fun onClickedIrregularidad(position : Int, isChecked : Boolean, context : Context) {
 
         var todo : Todo? = capturados.value?.get(position)
@@ -88,7 +111,7 @@ class SharedViewModel(
             viewModelScope.launch{
                 repositorio.actualizaIrregularidad(todo)
                 if(isChecked){
-                    when(todo.tipo){
+                    when(todo.rubro){
                         1-> //IrregularidadActivity
                             startIrregularidadMuebles.postValue(todo)
                         3-> //IrregularidadCedisActivity
@@ -103,10 +126,10 @@ class SharedViewModel(
 
     }
 
-    fun buscaCodigosMaster(codigo : String){
+    fun buscarMasterPorLetra(escanner : String){
         viewModelScope.launch {
             //Metodo del repos
-            val todo : Todo? = repositorio.buscasMaster(codigo)
+            val todo : Todo? = repositorio.buscarsMasterMaestro(escanner)
 
             if(todo?.description=="leido"){
                 etiquetaleida.postValue(todo)
@@ -115,25 +138,37 @@ class SharedViewModel(
                 normal.postValue(todo)
             }
 
-
         }
     }
 
-     fun buscasMasterCodigos(smaster:String){
-         viewModelScope.launch {
-             //Metodo del repos
-             val todo : Todo? = repositorio.buscarsMasterCodigo(smaster)
+    fun buscasMasterCodigos(smaster: String) {
+        viewModelScope.launch {
+            //Metodo del repos
+            val todo: Todo? = repositorio.buscarMasterPorCodigo(smaster)
 
-             if(todo?.description=="leido"){
-                 etiquetaleida.postValue(todo)
-             }
-             else if (todo?.isMaster==1){
-                 normal.postValue(todo)
-             }
+            if (todo==null){
+                 invalida.postValue(true)
+        }
+            else if (todo?.description == "sobrante") {
+                etiquetaleida.postValue(todo)
+            }
 
+            else if (todo?.description == "leido") {
+                etiquetaleida.postValue(todo)
+            }
+            else if    (todo?.isMaster == 0 && todo.rubro==5) {
+                mueblesbodega.postValue(todo)
+            }
 
-         }
-     }
+            else if    (todo?.isMaster == 0) {
+                pisorack.postValue(todo)
+
+            } else if (todo?.isMaster == 1) {
+                normal.postValue(todo)
+                }
+
+        }
+    }
 
 
     fun obtenerdescripcion(s: String) {

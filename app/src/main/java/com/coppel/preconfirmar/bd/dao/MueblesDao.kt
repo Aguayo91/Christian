@@ -15,10 +15,11 @@ interface MueblesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveMuebles(surtidoMueblesListEntity: SurtidoMueblesListEntity)
 
+    @Query("SELECT * FROM surtidomuebleslistentity WHERE sMaster = :smaster AND iLectura = :lectura AND :iRubro" )
+    suspend fun getDescripcionsMasterMuebles(smaster: String?, lectura : Int, iRubro:Int):List<SurtidoMueblesListEntity>
 
 
-
-    @Query("SELECT * FROM surtidomuebleslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
+    @Query("SELECT * FROM surtidomuebleslistentity WHERE iCodigo = :icodigo AND iLectura = 0 AND iRubro IN (5, 6)")
     suspend fun getDescripcionCodigo(icodigo:String?):List<SurtidoMueblesListEntity>
 
 
@@ -46,10 +47,10 @@ interface MueblesDao {
     @Query("SELECT iMoto FROM surtidomuebleslistentity WHERE iCodigo = :icodigo" )
     suspend fun getDescripcionMoto(icodigo: Int?):Int?
 
-    @Query("SELECT * FROM surtidomuebleslistentity WHERE sMaster = :smaster AND iLectura = :lectura AND :iRubro" )
-    suspend fun getDescripcionsMasterMuebles(smaster: String?, lectura : Int, iRubro:Int):List<SurtidoMueblesListEntity>
 
 
+    @Query("SELECT iExistencia FROM surtidomuebleslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
+    suspend fun getExistencianCodigo(icodigo:Int?):Int?
 
     @Query("DELETE FROM surtidomuebleslistentity  WHERE iFolioSurtido <> :folioactual")
     suspend fun deleteNull(folioactual:Int)
@@ -61,25 +62,18 @@ interface MueblesDao {
     @Query("SELECT *  FROM surtidomuebleslistentity WHERE iLectura = 0 UNION SELECT *  FROM surtidocelulareslistentity WHERE iLectura = 0")
     suspend fun sizeChris():List<SurtidoMueblesListEntity>
 
-    @Query("SELECT iExistencia FROM surtidomuebleslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
-    suspend fun getExistencianCodigo(icodigo:Int?):Int?
 
     @Query("SELECT iFolioSurtido FROM surtidomuebleslistentity")
     suspend fun getFolioSurtido():Int?
 
-
     @Query("UPDATE surtidomuebleslistentity SET ilectura = 1 where iKeyx = (select distinct iKeyx from surtidomuebleslistentity where iCodigo = :icodigo AND iLectura <>1)")
-    suspend fun updateListCodigo(icodigo: Int?)
-
+    suspend fun updateListCodigo(icodigo: String?)
 
     @Query("UPDATE surtidomuebleslistentity SET sSerie = :serie, ilectura = 1 where iKeyx = (select distinct iKeyx from surtidomuebleslistentity where iCodigo = :icodigo AND iLectura <>1)")
     suspend fun updateListMotoSerie(serie: Int?,icodigo: Int?)
 
-
     @Query("UPDATE surtidomuebleslistentity SET iActa = :iacta where iKeyx = (select distinct iKeyx from surtidomuebleslistentity where iCodigo = :icodigo AND iLectura =1)")
     suspend fun updateListActa(iacta: Int, icodigo: Int?)
-
-
 
     @Query("UPDATE surtidomuebleslistentity SET ilectura = 1 where iCodigo = :smaster AND iKeyx = :ikeyx")
     suspend fun updatListCodigo(smaster: String?, ikeyx : Int)

@@ -24,7 +24,7 @@ interface MotosDao {
     @Query("SELECT count ('iKey') FROM surtidomotoslistentity")
     suspend fun sizeMotos():Int
 
-    @Query("SELECT * FROM surtidomotoslistentity WHERE iCodigo = :icodigo AND iLectura = 0")
+    @Query("SELECT * FROM surtidomotoslistentity WHERE iCodigo = :icodigo AND iLectura = 0 AND iRubro = 9")
     suspend fun getDescripcionMotosCodigo(icodigo:String?):List<SurtidoMotosListEntity>
 
     @Query("UPDATE surtidomotoslistentity SET ilectura = 1 where iCodigo = :smaster AND iKeyx = :ikeyx")

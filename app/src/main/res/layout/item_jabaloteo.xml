@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:gravity="center|end"
+        android:paddingEnd="1dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/ic_delete"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_delete_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/circularstd_bold"
+                android:text="@string/eliminar_row"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/gray_background"
+        android:background="@drawable/item" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/badgeSobrante"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/badge_circle"
+                    android:fontFamily="@font/circularstd_bold"
+                    android:gravity="center"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp"
+                    android:text="S"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/badgeExhibir"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/badge_circle"
+                    android:fontFamily="@font/circularstd_bold"
+                    android:gravity="center"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp"
+                    android:text="E"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/title_codigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/circularstd_book"
+                    android:hint="@string/hint_vale"
+                    android:text=""
+                    android:textColor="@color/blue_500"
+                    android:textColorHint="@color/blue_500"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/circularstd_bold"
+                    android:maxLines="1"
+                    android:text="@string/item_captura_loteo"
+                    android:textAllCaps="true"
+                    android:textColor="@color/fonts"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkboxIrregular"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:buttonTint="@color/blue_500" />
+
+                <TextView
+                    android:id="@+id/title_irregularidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/circularstd_bold"
+                    android:text="@string/tx_irregular"
+                    android:textColor="@color/fonts"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/title_cantidad_letra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/circularstd_bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/fonts"/>
+
+                <TextView
+                    android:id="@+id/title_cantidad_numero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/circularstd_bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/fonts"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

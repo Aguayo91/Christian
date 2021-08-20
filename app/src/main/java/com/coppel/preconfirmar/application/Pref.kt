@@ -125,6 +125,11 @@ class Pref(val context: Context) {
         return storage.getString(SCANNER, "")!!
     }
 
+    fun eliminarScanner(){
+        storage.edit().remove(SCANNER).apply()
+    }
+
+
     val OPTION_PDA = "OPTION_PDA"
     fun guardarOptionPDA(value: Int) {
         storage.edit().putInt(OPTION_PDA, value).apply()
@@ -210,14 +215,50 @@ class Pref(val context: Context) {
         return storage.getInt(RESULTADO_PROGRESS, -1)
     }
 
-    val SIN_ETIQUETA = "SIN_ETIQUETA"
-    fun storageSinEtiqueta(value: Int) {
-        storage.edit().putInt(SIN_ETIQUETA, value).apply()
+    val SIN_ETIQUETA_MUEBLES = "SIN_ETIQUETA_MUEBLES"
+    fun guardarSinEtiquetaMuebles(value: Int) {
+        storage.edit().putInt(SIN_ETIQUETA_MUEBLES, value).apply()
     }
 
-    fun getSinEtiqueta(): Int {
-        return storage.getInt(SIN_ETIQUETA, 0)
+    fun obtenerSinEtiquetaMuebles(): Int {
+        return storage.getInt(SIN_ETIQUETA_MUEBLES, 0)
     }
+
+
+
+    val SIN_ETIQUETA_CELULARES = "SIN_ETIQUETA_CELULARES"
+    fun guardarSinEtiquetaCelulares(value: Int) {
+        storage.edit().putInt(SIN_ETIQUETA_CELULARES, value).apply()
+    }
+
+    fun obtenerSinEtiquetaCelulares(): Int {
+        return storage.getInt(SIN_ETIQUETA_CELULARES, 0)
+    }
+
+
+
+    val SIN_ETIQUETA_SUMINISTROS = "SIN_ETIQUETA_SUMINISTROS"
+    fun guardarSinEtiquetaSuministros(value: Int) {
+        storage.edit().putInt(SIN_ETIQUETA_SUMINISTROS, value).apply()
+    }
+
+    fun obtenerSinEtiquetaSuministros(): Int {
+        return storage.getInt(SIN_ETIQUETA_SUMINISTROS, 0)
+    }
+
+
+    val SIN_ETIQUETA_ROPA = "SIN_ETIQUETA_ROPA"
+    fun guardarSinEtiquetaRopa(value: Int) {
+        storage.edit().putInt(SIN_ETIQUETA_ROPA, value).apply()
+    }
+
+    fun obtenerSinEtiquetaRopa(): Int {
+        return storage.getInt(SIN_ETIQUETA_ROPA, 0)
+    }
+
+
+
+
 
     val FINALIZAR_PRECONFIRMACION = "FINALIZAR_PRECONFIRMACION"
     fun guardarFINALPRECONFIRMACION(value: Boolean) {

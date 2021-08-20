@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cedisropa.scanner.OnScanListener
 import com.coppel.framework.ui.view.textviews.TextviewLabel
@@ -52,16 +53,23 @@ class LoteoFragment : Fragment(), OnSolicitaCantidad, OnClickCheckboxListenerAda
     ): View {
         _binding = FragmentLoteoBinding.inflate(inflater, container, false)
 
-        (activity as MainActivity).getSupportActionBar()?.setTitle(
-            resources.getString(R.string.app_loteo))
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val args: LoteoFragmentArgs by navArgs()
+        val folio = args.foliogenerado.toString()
+        binding.txmifolio.text = folio
+        binding.txarea.text = "Muebles"
+
         (activity as MainActivity).getSupportActionBar()?.setTitle(
             resources.getString(R.string.app_loteo))
+
+        //(activity as MainActivity).miDrawerLoteo()
+
 
         val millisegundostotales:Long =
             RxApplication.pref.obtenerMilliFinishconfirmar()

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Recepción Surtido Muebles</string>
     <string name="app_loteo">Loteo Muebles</string>
+    <string name="jaba_etiqueta">Jaba sin etiqueta</string>
     <string name="domain">com.coppel</string>
     <string name="globaldomain">coppel</string>
     <string name="application_inicio">Inicio de la Aplicación Recepción de Surtido APK1</string>
@@ -41,12 +42,15 @@
     <string name="btn_yes">Sí</string>
     <string name="btn_no">No</string>
     <string name="title_error_assortment_folio">Folio</string>
+    <string name="title_folio">Folio:</string>
     <string name="startActivity_APK2"><![CDATA[--------------startActivity App2 Confirmación Surtido Muebles------------------> ]]></string>
+
     <string name="startActivity_APK1"><![CDATA[--------------startActivity App1 Preconfirmación de Surtido Muebles------------------> ]]></string>
     <string name="salirfragment">Si decide continuar, se eliminará la información leída de la Aplicación</string>
     <string name="menu_salir">Salir</string>
     <string name="quiere_salir">¿Desea Salir?</string>
     <string name="menu_jaba">Jaba sin etiqueta</string>
+    <string name="menu_master">Master Pendientes</string>
     <string name="action_settings">Settings</string>
     <string name="menu_master_pendientes">Master Pendientes</string>
     <string name="apkFolio">Folio de surtido:</string>
@@ -63,13 +67,17 @@
     <string name="hint">Ingrese el código, vale o master</string>
     <string name="hint_loteo">Ingrese el código o vale</string>
     <string name="hint_cantidad">1</string>
-    <string name="master">Master: %1$s%1$d %1$d</string>
+    <string name="master">Master:</string>
     <string name="btn_capturar">Capturar</string>
     <string name="titulo_master_leida">Etiqueta Master</string>
     <string name="master_leida">Esta master ya fue leída</string>
     <string name="titulo_ventasxr">Artículo para entrega a clientes</string>
     <string name="titulo_finalizar">Terminar Surtido</string>
     <string name="msg_finalizar">¿Desea finalizar la preconfirmación con mercancia faltante?</string>
+
+    <string name="titulo_iniciarFolio">Iniciar Surtido</string>
+    <string name="msg_iniciarFolio">¿Desea iniciar el folio: %1$s?</string>
+
     <string name="marcanciaLista">Mercancia capturada</string>
     <string name="marcanciapendiente">Mercancia pendiente</string>
     <string name="size_surtido">"EL total es : %1$d</string>
@@ -79,10 +87,26 @@
     <string name="progress">%1$d%%</string>
     <string name="btn_irregularidad_no">No</string>
     <string name="btn_irregularidad_si">Si</string>
+    <string name="irregularidad_jaba_aceptar">Aceptar</string>
     <string name="title_irregularidad">¿Desea generar una irregularidad en \n %1$s? </string>
+    <string name="title_selecciona_loteomuebles">Seleciona el folio  Pendiente  a Lotear</string>
+    <string name="title_irregularidad_jaba">¿Desea generar una irregularidad en la Jaba \n %1$s? </string>
+    <string name="title_irregularidad_ropa">¿Desea generar una irregularidad en guía ropa \n %1$s? </string>
     <string name="toolbar_irregularidad">Irregularidad</string>
+    <string name="toolbar_irregularidad_jaba">Irregularidad en Jaba</string>
+    <string name="toolbar_irregularidad_ropa">Irregularidad en Guía Ropa</string>
     <string name="btn_cargo_irregularidad">Cargo</string>
     <string name="btn_acta_irregularidad">Acta</string>
+
+    <string name="irregularidad_jaba_danada">Jaba dañada</string>
+    <string name="irregularidad_jaba_sellos">Jaba con sellos violados</string>
+    <string name="irregularidad_jaba_abierta">Jaba abierta</string>
+
+
+    <string name="irregularidad_ropa_carton_roto">Cartón roto</string>
+    <string name="irregularidad_ropa_carton_abierto">Cartón abierto</string>
+    <string name="irregularidad_ropa_empaque">Empaque incorrecto</string>
+
     <string name="radiobutton_cargo_daniado">Dañado</string>
     <string name="radiobutton_cargo_incompleto">Incompleto</string>
     <string name="radiobutton_acta_faltante">Faltante</string>
@@ -108,6 +132,7 @@
     <string name="check_laminas">Laminas Sueltas</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="hint_codigo">Código</string>
+    <string name="hint_vale">SKU/Vale</string>
     <string name="hint_parcial">Parcial</string>
     <string name="sobrantes">S</string>
     <string name="exhibir">E</string>
@@ -142,4 +167,12 @@
     <string name="warning_title_internet">El dispositivo no se encuentra conectado a Internet.</string>
     <string name="warning_message_internet">Favor de acercarse al área de cajas.</string>
     <string name="titulo_imei">IMEI: </string>
+    <string name="titulo_encabezado">Articulo Sobrante</string>
+    <string name="subtitulo_encabezado">Selecciona el rubro al que pertenece el sobrante ingresado</string>
+    <string name="rubro_muebles">Código Muebles</string>
+    <string name="rubro_udi">Udi Muebles</string>
+    <string name="rubro_moto">Código Motocicleta</string>
+    <string name="rubro_mensajeria">Código Mensajería</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

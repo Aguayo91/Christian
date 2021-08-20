@@ -90,7 +90,7 @@
         android:layout_marginBottom="5dp"
         android:elevation="4dp"
         android:gravity="start|bottom"
-        android:text="Muebles"
+        android:text=" "
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -98,6 +98,38 @@
         app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toEndOf="@+id/texviewFolioSurtido"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/texviewfolioo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:elevation="4dp"
+        android:gravity="start|bottom"
+        android:text="Folio:"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/texviewFolioSurtido"
+        app:layout_constraintEnd_toStartOf="@+id/guideline81"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txmifolio"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:elevation="4dp"
+        android:gravity="start|bottom"
+        android:text="102"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/txarea"
+        app:layout_constraintEnd_toStartOf="@+id/guideline81"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toEndOf="@+id/texviewFolioSurtido"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView

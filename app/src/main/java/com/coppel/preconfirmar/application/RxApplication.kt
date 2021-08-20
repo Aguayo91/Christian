@@ -5,6 +5,8 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import com.coppel.preconfirmar.R
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
 
 class RxApplication: Application() {
 
@@ -33,6 +35,10 @@ class RxApplication: Application() {
                 R.string.application_inicio
             )
         )
+        Logger.d(resources.getString(
+            R.string.application_inicio
+        ))
+        Logger.addLogAdapter(AndroidLogAdapter())
         pref = Pref(applicationContext)
 
     }

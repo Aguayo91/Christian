@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -27,7 +28,7 @@ class MainActivity : BrAppCompatActivity(), NavigationView.OnNavigationItemSelec
     companion object {
         private val TAG = MainActivity::class.qualifiedName
     }
-
+    private lateinit var mediaPlayer: MediaPlayer
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navigationDrawer :NavigationView
     private lateinit var drawerLayout: DrawerLayout
@@ -42,10 +43,12 @@ class MainActivity : BrAppCompatActivity(), NavigationView.OnNavigationItemSelec
         setSupportActionBar(binding.appBarMain.toolbar)
         drawerLayout = binding.drawerLayout
 
-
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         navigationDrawer  = binding.navView
         navigationDrawer.setNavigationItemSelectedListener(this)
+
+
+
 
         appBarConfiguration = AppBarConfiguration(
             navController.graph,drawerLayout)
@@ -64,10 +67,16 @@ class MainActivity : BrAppCompatActivity(), NavigationView.OnNavigationItemSelec
         return true
     }
 
+    /*fun miDrawerLoteo(){
+        binding.navView.menu.findItem(R.id.nav_master).isVisible = true
+        binding.navView.menu.findItem(R.id.nav_jaba).isVisible = false
+    }*/
+
     private val getVolumeLevel = object : BroadcastReceiver(){
         override fun onReceive(context: Context?, intent: Intent?) {
             val volume = intent?.extras!!["android.media.EXTRA_VOLUME_STREAM_VALUE"] as Int
             binding.appBarMain.toolbar.menu.findItem(R.id.action_settings).isVisible = volume == 0
+
         }
     }
 
@@ -95,7 +104,10 @@ class MainActivity : BrAppCompatActivity(), NavigationView.OnNavigationItemSelec
 
                 val action = HomeFragmentDirections.actionNavHomeToSalirFragment()
                 findNavController(R.id.nav_host_fragment_content_main).navigate(action)
-
+                mediaPlayer = MediaPlayer.create(
+                    this@MainActivity, R.raw.pop
+                )
+                mediaPlayer.start()
             }
 
             R.id.nav_jaba -> {

@@ -21,6 +21,7 @@ import com.coppel.preconfirmar.entities.*
         ConsultarKeyXEntity::class,
         DetalleMasterListEntity::class,
         FaltantesListEntity::class,
+        SinEtiqueta::class,
         Todo::class],
     version = 1, exportSchema = false
 )
@@ -39,6 +40,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun consultarkeyXDao(): ConsultarKeyXDao
     abstract fun consultarDetalleMasterDao(): DetalleMasterDao
     abstract fun faltantesDao():FaltantesDao
+    abstract fun sinetiquetaDao():SinEtiquetaDao
 
     companion object {
 
